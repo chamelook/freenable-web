@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침",
-  description: "FREE 개인정보처리방침",
+  description: "freenable 개인정보처리방침",
   alternates: { canonical: "/privacy/" },
 };
 
@@ -20,5 +20,5 @@ function readLegalContent(fileName: string) {
 }
 
 function LegalPage({ title, content }: { title: string; content: string }) {
-  return <div className="legal-page"><header><Link href="/">← FREE 홈으로</Link><h1>{title}</h1></header><main className="legal-content" dangerouslySetInnerHTML={{ __html: content }} /><footer>© 2026 프리너블 (FREENABLE). All rights reserved.</footer></div>;
+  return <div className="legal-page"><header><Link href="/">← freenable 홈으로</Link><h1>{title}</h1></header><main className="legal-content" dangerouslySetInnerHTML={{ __html: content }} /><footer>© 2026 프리너블 (freenable). All rights reserved.</footer></div>;
 }

@@ -29,7 +29,7 @@ export function HeroSearch() {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const subject = keyword.trim() ? `'${keyword.trim()}' 검색은 ` : "";
-    showToast(`${subject}웹 서비스에서 곧 제공됩니다. 지금은 FREE 앱에서 확인해 주세요.`);
+    showToast(`${subject}웹 서비스에서 곧 제공됩니다. 지금은 freenable 앱에서 확인해 주세요.`);
     document.querySelector("#app")?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
@@ -91,7 +91,7 @@ export function ReadyButton({ label = "상세보기", ariaLabel }: { label?: str
   const { message, showToast } = useToast();
   return (
     <>
-      <button type="button" aria-label={ariaLabel} onClick={() => showToast("웹 상세보기는 준비 중입니다. 현재 서비스는 FREE 앱에서 이용할 수 있습니다.")}>{label}</button>
+      <button type="button" aria-label={ariaLabel} onClick={() => showToast("웹 상세보기는 준비 중입니다. 현재 서비스는 freenable 앱에서 이용할 수 있습니다.")}>{label}</button>
       <Toast message={message} />
     </>
   );
