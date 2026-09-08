@@ -1,5 +1,16 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const spoqa = localFont({
+  src: [
+    { path: "../public/fonts/SpoqaHanSansNeo-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/SpoqaHanSansNeo-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../public/fonts/SpoqaHanSansNeo-Bold.ttf", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+  variable: "--font-spoqa",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.freenable.co.kr"),
@@ -27,7 +38,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body className={spoqa.variable}>{children}</body>
     </html>
   );
 }

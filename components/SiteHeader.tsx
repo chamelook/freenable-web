@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { SITE } from "@/content/site";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,6 @@ export function SiteHeader() {
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="freenable 홈">
           <span className="brand-word">freenable</span>
-          <span className="brand-caption">freenable</span>
         </Link>
 
         <button
@@ -42,15 +42,11 @@ export function SiteHeader() {
         </button>
 
         <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
-          <Link href="/#jobs" onClick={() => setIsOpen(false)}>채용공고</Link>
-          <Link href="/#substitute" onClick={() => setIsOpen(false)}>긴급 대타</Link>
-          <Link href="/#talent" onClick={() => setIsOpen(false)}>인재찾기</Link>
-          <Link href="/#about" onClick={() => setIsOpen(false)}>서비스 소개</Link>
+          {SITE.navigation.map(item => <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</Link>)}
         </nav>
 
         <div className="header-actions">
-          <a className="text-link" href="mailto:chamelook@gmail.com?subject=freenable%20서비스%20문의">문의하기</a>
-          <Link className="button button-dark button-small" href="/#app">앱에서 시작하기</Link>
+          <Link className="button button-dark button-small" href="/#app">앱 이용 안내 <span aria-hidden="true">↗</span></Link>
         </div>
       </div>
     </header>

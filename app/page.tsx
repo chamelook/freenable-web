@@ -1,121 +1,88 @@
+import Image from "next/image";
 import Link from "next/link";
-import { CategoryTabs, HeroSearch, ReadyButton } from "@/components/InteractiveControls";
 import { SiteHeader } from "@/components/SiteHeader";
-
-const JOBS = [
-  { initial: "P", markClass: "", company: "필라테스 스튜디오", title: <>저녁 그룹레슨<br />필라테스 강사</>, location: "서울 성북구", experience: "경력 무관", schedule: "시간 협의" },
-  { initial: "D", markClass: "mark-dark", company: "댄스 아카데미", title: <>K-POP 취미반<br />전임 강사</>, location: "서울 마포구", experience: "1년 이상", schedule: "주 3일" },
-  { initial: "Y", markClass: "mark-warm", company: "웰니스 센터", title: <>평일 오전<br />요가 강사</>, location: "경기 성남시", experience: "2년 이상", schedule: "오전 수업" },
-  { initial: "F", markClass: "mark-outline", company: "피트니스 클럽", title: <>퍼스널 트레이너<br />프리랜서 코치</>, location: "인천 연수구", experience: "경력 무관", schedule: "요일 협의" },
-];
-
-const SUBSTITUTE_JOBS = [
-  { date: "2026-07-17", day: "17", month: "JUL · FRI", tag: "필라테스", title: "오후 7시 기구 필라테스 그룹 수업", meta: "서울 강남구 · 50분 · 1회" },
-  { date: "2026-07-18", day: "18", month: "JUL · SAT", tag: "댄스", title: "주말 키즈 K-POP 클래스", meta: "경기 수원시 · 80분 · 1회" },
-  { date: "2026-07-20", day: "20", month: "JUL · MON", tag: "요가", title: "모닝 빈야사 요가 클래스", meta: "서울 용산구 · 60분 · 1회" },
-];
+import { SITE } from "@/content/site";
 
 export default function Home() {
   return (
     <>
       <a className="skip-link" href="#main">본문으로 바로가기</a>
       <SiteHeader />
-
       <main id="main">
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-inner">
             <div className="hero-copy">
-              <p className="eyebrow"><span className="status-dot" /> 예체능 프리랜서 전문 채용 플랫폼</p>
-              <h1 id="hero-title">당신의 무대가,<br /><span>일로 이어지도록.</span></h1>
-              <p className="hero-description">댄스·피트니스 강사와 기업을 한곳에서 연결합니다.<br />정규 채용부터 오늘 필요한 긴급 대타까지 더 빠르게 만나보세요.</p>
+              <p className="eyebrow">좋아하는 일을, 오래도록.</p>
+              <h1 id="hero-title">좋은 수업이<br />좋은 일상이<br />되도록<span className="period">.</span></h1>
+              <p className="hero-description">가르치는 일에 진심인 당신을 위해.<br />내게 맞는 수업부터 꼭 필요한 대타까지,<br />프리너블에서 연결해요.</p>
+              <Link className="button button-dark" href="#app">프리너블 알아보기 <span aria-hidden="true">↗</span></Link>
+              <p className="hero-footnote">댄스·피트니스 강사를 위한 일의 연결</p>
             </div>
-            <HeroSearch />
-            <div className="hero-note"><span>WEB</span><p><strong>웹 채용 서비스는 준비 중입니다.</strong> 현재 채용공고 확인과 지원은 freenable 앱에서 이용할 수 있습니다.</p></div>
+            <div className="hero-photo">
+              <Image src="/images/movement.jpg" alt="밝은 스튜디오에서 함께 운동하는 사람들" fill priority unoptimized sizes="(max-width: 760px) 100vw, 55vw" />
+              <div className="photo-caption"><span>수업이 있는 곳에, 프리너블</span><span aria-hidden="true">↗</span></div>
+            </div>
           </div>
+          <div className="field-strip"><p>당신이 가르치는 모든 움직임</p><ul>{SITE.fields.map(field => <li key={field}>{field}</li>)}</ul></div>
         </section>
 
-        <section className="job-section section" id="jobs" aria-labelledby="jobs-title">
-          <div className="section-heading">
-            <div><p className="eyebrow">JOBS FOR YOU</p><h2 id="jobs-title">분야별 채용 기회를<br />한눈에 확인하세요</h2></div>
-            <Link className="arrow-link" href="#app">앱에서 전체 공고 보기 <span aria-hidden="true">→</span></Link>
+        <section className="section introduction" id="about" aria-labelledby="about-title">
+          <p className="eyebrow">수업을 찾는 일부터, 조금 더 편하게</p>
+          <h2 id="about-title">여기저기 찾던 수업 일자리.<br />이제, 한곳에서 만나요.</h2>
+          <p>새로운 수업을 찾을 때도, 빈 수업을 맡길 사람이 필요할 때도.<br className="desktop-break" /> 프리너블은 강사와 센터 사이에 필요한 연결을 만듭니다.</p>
+        </section>
+
+        <section className="section feature-section" id="jobs" aria-labelledby="jobs-title">
+          <div className="feature-visual jobs-visual">
+            <div className="visual-heading"><span className="brand-word">freenable</span><span>수업 찾기</span></div>
+            <div className="visual-title">어떤 수업을<br />함께하고 싶나요?</div>
+            <div className="discipline-grid">{SITE.fields.map((field, index) => <div key={field} className={`discipline discipline-${index}`}><span aria-hidden="true">{["↗", "✳", "∿", "◒", "+"][index]}</span><strong>{field}</strong></div>)}</div>
+            <p className="visual-note">나의 분야에서 시작하는 새로운 기회</p>
           </div>
-          <CategoryTabs />
-          <div className="job-grid" aria-label="채용공고 화면 예시">
-            {JOBS.map((job) => (
-              <article className="job-card" key={job.company}>
-                <div className="job-card-top"><span className={`company-mark ${job.markClass}`.trim()}>{job.initial}</span><span className="job-badge">채용 예시</span></div>
-                <p className="company-name">{job.company}</p>
-                <h3>{job.title}</h3>
-                <dl className="job-meta"><div><dt>지역</dt><dd>{job.location}</dd></div><div><dt>경력</dt><dd>{job.experience}</dd></div></dl>
-                <div className="job-card-footer"><span>{job.schedule}</span><ReadyButton /></div>
-              </article>
-            ))}
+          <div className="feature-copy">
+            <p className="eyebrow">수업 찾기</p>
+            <h2 id="jobs-title">아무 수업 말고,<br />나에게 맞는 수업.</h2>
+            <p>내 분야, 내 지역, 나의 일정.<br />나에게 중요한 조건부터 살펴보세요.</p>
+            <ol className="criteria-list">{SITE.jobCriteria.map(item => <li key={item.number}><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.description}</p></div></li>)}</ol>
+            <Link className="arrow-link" href="#app">앱 이용 안내 <span aria-hidden="true">↗</span></Link>
           </div>
-          <p className="preview-caption">위 공고는 앞으로 제공될 웹 채용 화면을 보여주기 위한 예시입니다.</p>
         </section>
 
         <section className="substitute-section" id="substitute" aria-labelledby="substitute-title">
-          <div className="section substitute-inner">
-            <div className="substitute-intro">
-              <p className="eyebrow eyebrow-light">URGENT SUBSTITUTE</p>
-              <h2 id="substitute-title">갑자기 빈 수업,<br />빠르게 연결해요.</h2>
-              <p>날짜, 지역, 장르만 확인하고 앱에서 바로 지원하세요.</p>
-              <Link className="button button-light" href="#app">긴급 대타 알아보기</Link>
+          <div className="section feature-section substitute-inner">
+            <div className="feature-copy">
+              <p className="eyebrow">대타 연결</p>
+              <h2 id="substitute-title">갑자기 비는 수업도,<br />새롭게 열린 기회도.</h2>
+              <p>수업을 부탁할 강사를 찾는 센터와<br />빈 시간에 수업을 맡고 싶은 강사가 만나요.</p>
+              <p className="secondary-copy">언제, 어디서, 어떤 수업인지.<br />필요한 조건을 공고로 나누고 연결을 시작하세요.</p>
+              <Link className="arrow-link" href="#app">대타 기능 이용 안내 <span aria-hidden="true">↗</span></Link>
             </div>
-            <div className="substitute-list" aria-label="긴급 대타 화면 예시">
-              {SUBSTITUTE_JOBS.map((job) => (
-                <article key={job.date}>
-                  <time dateTime={job.date}><strong>{job.day}</strong><span>{job.month}</span></time>
-                  <div><span className="list-tag">{job.tag}</span><h3>{job.title}</h3><p>{job.meta}</p></div>
-                  <ReadyButton label="→" ariaLabel={`${job.tag} 대타 상세보기`} />
-                </article>
-              ))}
+            <div className="connection-visual" aria-label="센터의 대타 공고와 강사의 지원을 연결하는 서비스">
+              <span className="connection-label">빈 수업을 채우는 연결</span>
+              <div className="message message-center"><span>센터</span><p>이번 수업,<br /><strong>함께해 주실 선생님?</strong></p></div>
+              <div className="connection-line" aria-hidden="true"><span>↓</span></div>
+              <div className="message message-teacher"><span>강사</span><p>제 일정에 맞는 수업이네요.<br /><strong>제가 함께할게요.</strong></p></div>
+              <span className="connection-footnote">공고 등록부터 지원까지, 앱에서</span>
             </div>
           </div>
         </section>
 
-        <section className="talent-section section" id="talent" aria-labelledby="talent-title">
-          <div className="section-heading compact-heading"><div><p className="eyebrow">FOR EVERYONE</p><h2 id="talent-title">구직자와 기업 모두에게<br />필요한 연결만 남겼습니다</h2></div></div>
+        <section className="section audience-section" id="talent" aria-labelledby="talent-title">
+          <div className="section-heading"><p className="eyebrow">각자의 자리에서, 함께</p><h2 id="talent-title">가르치는 사람도,<br />공간을 만드는 사람도.</h2></div>
           <div className="audience-grid">
-            <article className="audience-card freelancer-card">
-              <p className="audience-index">01 · FREELANCER</p><h3>내 일정에 맞는<br />좋은 수업을 찾으세요.</h3>
-              <ul><li>장르와 지역에 맞는 채용공고</li><li>갑자기 생긴 빈 시간의 대타 매칭</li><li>경력과 전문성을 보여주는 프로필</li></ul>
-              <Link href="#app">프리랜서로 시작하기 <span aria-hidden="true">→</span></Link>
-            </article>
-            <article className="audience-card business-card">
-              <p className="audience-index">02 · BUSINESS</p><h3>우리 수업에 맞는<br />강사를 빠르게 만나세요.</h3>
-              <ul><li>채용·대타 공고를 한곳에서 관리</li><li>장르와 지역별 인재 프로필 탐색</li><li>지원부터 직접 제안까지 간편하게</li></ul>
-              <Link href="#app">기업 회원으로 시작하기 <span aria-hidden="true">→</span></Link>
-            </article>
+            <div className="audience-photo"><Image src="/images/yoga.jpg" alt="해 질 무렵 야외에서 요가 동작을 하는 사람" fill unoptimized sizes="(max-width: 760px) 100vw, 45vw" /><p>좋아하는 일을<br />계속할 수 있도록.</p></div>
+            <div className="audience-details"><article><span className="audience-label">프리랜서 강사라면</span><h3>수업에 쏟는 마음만큼,<br />일을 찾는 과정은 가볍게.</h3><p>새로운 수업과 대타 기회를 살펴보고,<br />프로필에 나의 경력과 전문성을 담아보세요.</p><Link className="arrow-link" href="#app">강사 이용 안내 <span aria-hidden="true">↗</span></Link></article><article><span className="audience-label">학원·스튜디오·센터라면</span><h3>우리 수업을 함께할<br />선생님을 만나세요.</h3><p>채용부터 하루 대타까지.<br />필요한 조건을 담아 앱에서 공고를 등록하세요.</p><a className="arrow-link" href={SITE.businessInquiry}>센터 이용 문의 <span aria-hidden="true">↗</span></a></article></div>
           </div>
         </section>
 
-        <section className="about-section" id="about" aria-labelledby="about-title">
-          <div className="section about-inner">
-            <p className="large-quote">“누구나 자신의 재능으로<br />더 자유롭게 일할 수 있도록.”</p>
-            <div className="about-copy"><p className="eyebrow">WHY freenable</p><h2 id="about-title">예체능 프리랜서의<br />일하는 방식을 바꿉니다.</h2><p>기존 채용 사이트에서 찾기 어려웠던 강사 채용과 대타 정보를 한곳에 모았습니다. freenable은 댄스와 피트니스에서 시작해 음악, 연기, 스포츠까지 더 넓은 재능의 시장으로 확장해갑니다.</p></div>
-          </div>
-        </section>
+        <section className="section faq-section" aria-labelledby="faq-title"><h2 id="faq-title">궁금한 점이 있나요?</h2><div className="faq-list">{SITE.questions.map(item => <details key={item.question}><summary>{item.question}<span aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></section>
 
-        <section className="app-section section" id="app" aria-labelledby="app-title">
-          <div className="app-card">
-            <div className="app-copy">
-              <p className="eyebrow eyebrow-light">freenable MOBILE APP</p><h2 id="app-title">좋은 기회를<br />가장 먼저 만나보세요.</h2>
-              <p>웹 채용 서비스가 준비되는 동안, freenable 앱에서 채용공고와 긴급 대타 기능을 먼저 이용해보세요.</p>
-              <div className="store-actions"><a className="button button-light" href="mailto:chamelook@gmail.com?subject=freenable%20앱%20이용%20문의">앱 이용 문의</a><a className="button button-outline-light" href="mailto:chamelook@gmail.com?subject=freenable%20웹%20서비스%20출시%20알림">웹 출시 소식 받기</a></div>
-            </div>
-            <div className="app-visual" aria-hidden="true">
-              <div className="phone-card phone-card-back"><span>긴급 대타</span><strong>오늘 가능한<br />수업을 확인하세요</strong></div>
-              <div className="phone-card phone-card-front"><div className="mini-logo">freenable</div><p>내게 맞는 채용공고</p>{["필라테스 강사", "댄스 전임 강사", "요가 그룹 강사"].map((title, index) => <div className="mini-job" key={title}><i /><span>{title}<br /><small>{index === 0 ? "서울 · 경력 무관" : index === 1 ? "서울 · 주 3일" : "경기 · 오전 수업"}</small></span></div>)}</div>
-            </div>
-          </div>
-        </section>
+        <section className="app-section" id="app" aria-labelledby="app-title"><div className="section app-inner"><Image className="app-symbol" src="/images/freenable-icon.png" alt="프리너블 앱 로고" width={96} height={96} unoptimized /><p className="eyebrow">다음 수업의 시작, 프리너블</p><h2 id="app-title">당신의 다음 수업을<br />함께 찾아볼까요?</h2><p>공고 확인과 지원은 현재 앱에서 이용할 수 있어요.<br />앱 이용 방법이 궁금하다면 편하게 문의해 주세요.</p><a className="button button-dark" href={SITE.appInquiry}>앱 이용 문의하기 <span aria-hidden="true">↗</span></a><span className="app-note">웹 채용 서비스도 차근차근 준비하고 있어요.</span></div></section>
       </main>
       <SiteFooter />
     </>
   );
 }
-
 function SiteFooter() {
   return (
     <footer className="site-footer">
