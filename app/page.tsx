@@ -102,7 +102,7 @@ export default function Home() {
             <div className="app-copy">
               <p className="eyebrow eyebrow-light">freenable MOBILE APP</p><h2 id="app-title">좋은 기회를<br />가장 먼저 만나보세요.</h2>
               <p>웹 채용 서비스가 준비되는 동안, freenable 앱에서 채용공고와 긴급 대타 기능을 먼저 이용해보세요.</p>
-              <div className="store-actions"><a className="button button-light" href="mailto:chamelook@gmail.com?subject=freenable%20앱%20이용%20문의">앱 이용 문의</a><a className="button button-outline-light" href="mailto:chamelook@gmail.com?subject=freenable%20웹%20서비스%20출시%20알림">웹 출시 소식 받기</a></div>
+              <div className="store-actions"><a className="button button-light" href="mailto:freebyfreenable@gmail.com?subject=freenable%20앱%20이용%20문의">앱 이용 문의</a><a className="button button-outline-light" href="mailto:freebyfreenable@gmail.com?subject=freenable%20웹%20서비스%20출시%20알림">웹 출시 소식 받기</a></div>
             </div>
             <div className="app-visual" aria-hidden="true">
               <div className="phone-card phone-card-back"><span>긴급 대타</span><strong>오늘 가능한<br />수업을 확인하세요</strong></div>
@@ -123,10 +123,10 @@ function SiteFooter() {
         <div className="footer-brand"><span className="brand-word">freenable</span><p>예체능 프리랜서의 가능성을<br />좋은 일과 연결합니다.</p></div>
         <div className="footer-links">
           <div><strong>서비스</strong><Link href="#jobs">채용공고</Link><Link href="#substitute">긴급 대타</Link><Link href="#talent">인재찾기</Link></div>
-          <div><strong>안내</strong><Link href="#about">서비스 소개</Link><a href="mailto:chamelook@gmail.com">고객문의</a><Link href="/terms">이용약관</Link><Link href="/privacy">개인정보처리방침</Link></div>
+          <div><strong>안내</strong><Link href="#about">서비스 소개</Link><a href="mailto:freebyfreenable@gmail.com">고객문의</a><Link href="/terms">이용약관</Link><Link href="/privacy">개인정보처리방침</Link></div>
         </div>
       </div>
-      <div className="footer-business"><p><strong>프리너블 (freenable)</strong> · 대표 권주빈 · 사업자등록번호 779-05-03544 · 통신판매업 신고번호 2026-서울성북-0328</p><p>서울시 성북구 북악산로 844 114-1201 · <a href="mailto:chamelook@gmail.com">chamelook@gmail.com</a> · 010-8979-2047 · 개인정보 보호책임자 권주빈</p><p className="copyright">© 2026 freenable. All rights reserved.</p></div>
+      <div className="footer-business"><p><strong>프리너블 (freenable)</strong> · 대표 권주빈 · 사업자등록번호 779-05-03544 · 통신판매업 신고번호 2026-서울성북-0328</p><p>서울시 성북구 북악산로 844 114-1201 · <a href="mailto:freebyfreenable@gmail.com">freebyfreenable@gmail.com</a> · 010-8979-2047 · 개인정보 보호책임자 권주빈</p><p className="copyright">© 2026 freenable. All rights reserved.</p></div>
     </footer>
   );
 }

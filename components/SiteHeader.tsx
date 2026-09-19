@@ -49,7 +49,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-actions">
-          <a className="text-link" href="mailto:chamelook@gmail.com?subject=freenable%20서비스%20문의">문의하기</a>
+          <a className="text-link" href="mailto:freebyfreenable@gmail.com?subject=freenable%20서비스%20문의">문의하기</a>
           <Link className="button button-dark button-small" href="/#app">앱에서 시작하기</Link>
         </div>
       </div>
