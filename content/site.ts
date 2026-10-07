@@ -1,8 +1,8 @@
 export const SITE = {
   name: "freenable",
-  email: "freebyfreenable@gmail.com",
-  appInquiry: "mailto:freebyfreenable@gmail.com?subject=freenable%20앱%20이용%20문의",
-  businessInquiry: "mailto:freebyfreenable@gmail.com?subject=freenable%20기업%20이용%20문의",
+  email: "contact@freenable.co.kr",
+  appInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20앱%20이용%20문의",
+  businessInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20기업%20이용%20문의",
   navigation: [
     { href: "/#jobs", label: "수업 찾기" },
     { href: "/#substitute", label: "대타 연결" },
