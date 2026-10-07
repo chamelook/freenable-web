@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import { SITE } from "@/content/site";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +29,7 @@ export function SiteHeader() {
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="freenable 홈">
-          <span className="brand-word">freenable</span>
+          <BrandLogo />
         </Link>
 
         <button
@@ -42,11 +44,11 @@ export function SiteHeader() {
         </button>
 
         <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
-          {SITE.navigation.map(item => <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</Link>)}
+          {SITE.navigation.map(item => <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>)}
         </nav>
 
         <div className="header-actions">
-          <Link className="button button-dark button-small" href="/#app">앱 이용 안내 <span aria-hidden="true">↗</span></Link>
+          <a className="button button-dark button-small" href="#app">앱 이용 안내 <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </header>

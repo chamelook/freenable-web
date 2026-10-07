@@ -6,7 +6,7 @@ export const SITE = {
   navigation: [
     { href: "/#jobs", label: "수업 찾기" },
     { href: "/#substitute", label: "대타 연결" },
-    { href: "/#talent", label: "강사·센터 안내" },
+    { href: "/#talent", label: "강사 프로필" },
     { href: "/#about", label: "프리너블 이야기" },
   ],
   fields: ["댄스", "발레", "필라테스", "요가", "피트니스"],
