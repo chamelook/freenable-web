@@ -66,7 +66,14 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
 .hero h1 { font-size: clamp(36px, 4.25vw, 57px); line-height: 1.42; letter-spacing: -.065em; margin-bottom: 25px; }
 .hero h1 > span { color: var(--warm); }
 .hero-description { font-size: 17px; color: #68605a; line-height: 1.9; margin-bottom: 36px; letter-spacing: -.025em; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.app-download-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.store-link { display: inline-flex; align-items: center; justify-content: center; gap: 11px; min-height: 58px; min-width: 170px; max-width: 100%; padding: 15px 24px; border-radius: 12px; background: var(--ink); color: #fff; font-size: 16px; font-weight: 500; line-height: 1.4; transition: background .2s, transform .2s; }
+.store-link svg { width: 23px; height: 25px; flex-shrink: 0; }
+.store-link:hover { background: var(--ink-soft); transform: translateY(-2px); }
+.store-link:active { transform: translateY(1px); }
+.hero-explore { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 8px 0; color: var(--ink-soft); font-size: 13px; }
+.hero-explore:hover { text-decoration: underline; text-underline-offset: 4px; }
+.app-inner .app-download-links { justify-content: center; }
 .button-outline { background: var(--paper); border-color: transparent; }
 .button-outline:hover { background: #fff; transform: translateY(-2px); }
 .introduction { text-align: center; padding: 145px 0; }
@@ -180,8 +187,10 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
  .hero-kicker { font-size: 15px; margin-bottom: 19px; }
  .hero h1 { font-size: clamp(29px, 6.7vw, 46px); line-height: 1.5; margin-bottom: 19px; }
  .hero-description { font-size: 13px; margin-bottom: 25px; }
- .hero-actions { justify-content: center; gap: 9px; }
- .hero-actions .button { font-size: 12px; min-height: 48px; padding: 0 16px; gap: 14px; }
+ .app-download-links { justify-content: center; gap: 10px; }
+ .store-link { min-width: 0; min-height: 54px; padding: 14px 18px; gap: 9px; font-size: 14px; }
+ .store-link svg { width: 21px; height: 23px; }
+ .hero-explore { margin-top: 16px; font-size: 12px; }
  .hero-stage { width: 360px; height: 580px; flex: 0 0 580px; transform: scale(.8); transform-origin: center top; margin-bottom: -75px; margin-top: 28px; }
  .hero-phone-back { left: -8px; top: 10px; transform: rotate(-9deg) scale(.85); }
  .hero-phone-front { right: -8px; top: 50px; transform: rotate(7deg) scale(.88); }

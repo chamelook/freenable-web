@@ -48,7 +48,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-actions">
-          <a className="button button-dark button-small" href="#app">앱 이용 안내 <span aria-hidden="true">↗</span></a>
+          <Link className="button button-dark button-small" href="/#app" onClick={() => setIsOpen(false)}>앱 다운로드 <span aria-hidden="true">↓</span></Link>
         </div>
       </div>
     </header>

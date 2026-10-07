@@ -1,5 +1,7 @@
 export const SITE = {
   name: "freenable",
+  appStore: "https://apps.apple.com/kr/app/%ED%94%84%EB%A6%AC%EB%84%88%EB%B8%94/id6770567266",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.free119.app&pcampaignid=web_share&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafQOP2f6Ko2zwbMjojzzjq-RdnYwCADNKBv1tXzrIqaVbKNz1tX-U--PqLAag_aem_mQQBu0xC13exsdcu-SK36g&pli=1",
   email: "contact@freenable.co.kr",
   appInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20앱%20이용%20문의",
   businessInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20기업%20이용%20문의",
@@ -17,7 +19,7 @@ export const SITE = {
   ],
   questions: [
     { question: "어떤 분들이 이용할 수 있나요?", answer: "댄스·발레·필라테스·요가·피트니스 분야에서 활동하는 프리랜서 강사와 강사를 찾는 학원, 스튜디오, 센터를 위한 서비스예요." },
-    { question: "웹에서도 공고를 확인하고 지원할 수 있나요?", answer: "웹 채용 서비스는 준비 중이에요. 현재 공고 확인과 지원은 프리너블 앱에서 이용할 수 있어요. 아래 앱 이용 문의로 연락해 주시면 안내해 드릴게요." },
+    { question: "웹에서도 공고를 확인하고 지원할 수 있나요?", answer: "현재 공고 확인과 지원은 프리너블 앱에서 이용할 수 있어요. App Store 또는 Google Play에서 프리너블을 다운로드해 주세요." },
     { question: "하루만 맡아줄 대타 강사도 찾을 수 있나요?", answer: "네. 앱의 대타 기능에서 필요한 수업의 날짜와 지역, 분야 등 조건을 담아 공고를 등록할 수 있어요. 지원 현황은 앱에서 확인해 주세요." },
   ],
 };
