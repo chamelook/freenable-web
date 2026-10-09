@@ -35,10 +35,12 @@ npm run build
 
 - 연락처, 메뉴, 분야, 질문과 답변은 `content/site.ts`에서 관리합니다.
 - 화면 문구와 섹션 구성은 `app/page.tsx`, 색상·여백·반응형 스타일은 `app/globals.css`에서 수정합니다.
-- 현재 홈페이지는 서비스 소개용입니다. 공고 검색과 지원은 앱에서 제공하며, 앱 스토어 주소가 확정되기 전까지 이용 문의로 연결합니다.
+- 현재 홈페이지는 서비스 소개용입니다. 공고 검색과 지원은 앱에서 제공하며, 다운로드 영역에서 App Store와 Google Play로 연결합니다.
 - 앱과 동일한 Spoqa Han Sans Neo(Regular 400, Medium 500, Bold 700)를 자체 호스팅합니다. 라이선스는 `public/fonts/LICENSE-SpoqaHanSansNeo.txt`에 보관합니다.
 - 로고는 앱의 `Icon/BRAND_ASSETS.md` 기준을 따릅니다. 워드마크는 Medium 500, 검정, 기본 자간을 사용하고 배경은 `#FBFAF8`로 맞춥니다. 앱 안내 아이콘, 파비콘, Apple 터치 아이콘은 앱의 `Icon/web` 원본을 사용합니다.
-- 소개 사진은 Unsplash의 [운동 수업 사진](https://images.unsplash.com/photo-1518611012118-696072aa579a)과 [요가 사진](https://images.unsplash.com/photo-1544367567-0f2fcb009e0b)을 사용합니다. 실제 서비스 회원의 사진이나 후기를 의미하지 않습니다.
+- 메인 화면의 공고와 긴급 대타 카드는 실제 게시물이 아닌 서비스 화면 예시이며, UI 안에 예시임을 표시합니다.
+- 랜딩페이지는 강사용 `앱 이용 안내`와 센터용 `기업 이용 문의`를 서로 다른 전환 경로로 제공합니다.
+- 스토어 주소는 `content/site.ts`의 `appStoreUrl`, `playStoreUrl`에서 관리합니다.
 
 ## 다음 개발 단계
 
