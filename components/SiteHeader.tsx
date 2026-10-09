@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import { SITE } from "@/content/site";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,17 +29,8 @@ export function SiteHeader() {
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="freenable 홈">
-          <span className="brand-word">freenable</span>
+          <BrandLogo />
         </Link>
-
-        <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
-          {SITE.navigation.map(item => <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</Link>)}
-          <Link className="mobile-nav-cta" href="/#download" onClick={() => setIsOpen(false)}>앱 다운로드 <span aria-hidden="true">→</span></Link>
-        </nav>
-
-        <div className="header-actions">
-          <Link className="button button-dark button-small" href="/#download">앱 다운로드 <span aria-hidden="true">→</span></Link>
-        </div>
 
         <button
           className="menu-button"
@@ -49,6 +42,14 @@ export function SiteHeader() {
           <span /><span /><span />
           <span className="sr-only">메뉴 {isOpen ? "닫기" : "열기"}</span>
         </button>
+
+        <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
+          {SITE.navigation.map(item => <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>)}
+        </nav>
+
+        <div className="header-actions">
+          <Link className="button button-dark button-small" href="/#app" onClick={() => setIsOpen(false)}>앱 다운로드 <span aria-hidden="true">↓</span></Link>
+        </div>
       </div>
     </header>
   );
