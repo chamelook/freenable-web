@@ -37,6 +37,8 @@ npm run build
 - 화면 문구와 섹션 구성은 `app/page.tsx`, 색상·여백·반응형 스타일은 `app/globals.css`에서 수정합니다.
 - 현재 홈페이지는 서비스 소개용입니다. 공고 검색과 지원은 앱에서 제공하며, 첫 화면과 하단의 App Store·Google Play 버튼으로 설치할 수 있습니다. 스토어 주소는 `content/site.ts`, 공통 설치 버튼은 `components/AppDownloadLinks.tsx`에서 관리합니다.
 - 앱과 동일한 Spoqa Han Sans Neo(Regular 400, Medium 500, Bold 700)를 자체 호스팅합니다. 라이선스는 `public/fonts/LICENSE-SpoqaHanSansNeo.txt`에 보관합니다.
+  - 원본 TTF(웨이트당 약 13MB) 대신 KS X 1001 완성형 한글 2,350자 + 호환 자모 + 라틴·구두점 + 사이트에 쓰인 문자만 남긴 WOFF2 서브셋(웨이트당 약 150KB)을 사용합니다. 서브셋에 없는 글자는 시스템 폰트로 표시됩니다.
+  - 재생성: [Spoqa Han Sans Neo 원본](https://github.com/spoqa/spoqa-han-sans)을 받아 `pyftsubset SpoqaHanSansNeo-Regular.ttf --text-file=charset.txt --layout-features='*' --flavor=woff2` (Medium·Bold 동일)
 - 로고는 앱의 `Icon/BRAND_ASSETS.md` 기준을 따릅니다. 워드마크는 앱의 `assets/images/freenable_logo_cropped.png`를 복사한 `public/images/freenable-logo.png`를 사용합니다. 공통 `BrandLogo` 컴포넌트에서 원본 비율을 유지합니다. 배경은 `#FBFAF8`입니다. 앱 안내 아이콘, 파비콘, Apple 터치 아이콘은 앱의 `Icon/web` 원본을 사용합니다.
 - [위티즈](https://wittiz.co.kr/ko)의 큰 첫 화면, 짧은 소개, 좌우 교차 기능 소개, 마지막 이용 안내 흐름을 참고했습니다. 캐릭터·성과·후기는 넣지 않습니다.
 - 포인트 색상 `#C48A6A`와 본문 색상 `#191F28`은 앱의 `AppColors` 기준입니다. 베이지 배경은 브랜드에 맞춘 보조색입니다.

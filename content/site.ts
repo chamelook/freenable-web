@@ -1,7 +1,7 @@
 export const SITE = {
   name: "freenable",
   appStore: "https://apps.apple.com/kr/app/%ED%94%84%EB%A6%AC%EB%84%88%EB%B8%94/id6770567266",
-  googlePlay: "https://play.google.com/store/apps/details?id=com.free119.app&pcampaignid=web_share&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafQOP2f6Ko2zwbMjojzzjq-RdnYwCADNKBv1tXzrIqaVbKNz1tX-U--PqLAag_aem_mQQBu0xC13exsdcu-SK36g&pli=1",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.free119.app",
   email: "contact@freenable.co.kr",
   appInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20앱%20이용%20문의",
   businessInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20기업%20이용%20문의",

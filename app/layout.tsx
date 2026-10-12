@@ -4,9 +4,9 @@ import "./globals.css";
 
 const spoqa = localFont({
   src: [
-    { path: "../public/fonts/SpoqaHanSansNeo-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../public/fonts/SpoqaHanSansNeo-Medium.ttf", weight: "500", style: "normal" },
-    { path: "../public/fonts/SpoqaHanSansNeo-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/SpoqaHanSansNeo-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/SpoqaHanSansNeo-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/SpoqaHanSansNeo-Bold.woff2", weight: "700", style: "normal" },
   ],
   display: "swap",
   variable: "--font-spoqa",
@@ -15,22 +15,22 @@ const spoqa = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.freenable.co.kr"),
   title: {
-    default: "freenable | 예체능 프리랜서 구인구직 플랫폼",
+    default: "프리너블(freenable) | 예체능 강사 구인구직·대타 앱",
     template: "%s | freenable",
   },
-  description: "댄스·피트니스 강사와 기업을 연결하는 예체능 프리랜서 구인구직 플랫폼 freenable입니다.",
+  description: "댄스·발레·필라테스·요가·피트니스 강사와 학원·센터를 연결하는 예체능 프리랜서 구인구직·대타 앱, 프리너블(freenable)입니다.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    siteName: "freenable",
-    title: "freenable | 예체능 프리랜서 구인구직 플랫폼",
+    siteName: "프리너블",
+    title: "프리너블(freenable) | 예체능 강사 구인구직·대타 앱",
     description: "채용부터 긴급 대타까지, 예체능 일을 더 빠르게 연결합니다.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "freenable | 예체능 프리랜서 구인구직 플랫폼",
+    title: "프리너블(freenable) | 예체능 강사 구인구직·대타 앱",
     description: "채용부터 긴급 대타까지, 예체능 일을 더 빠르게 연결합니다.",
   },
 };

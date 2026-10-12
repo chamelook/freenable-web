@@ -29,7 +29,7 @@ export function SiteHeader() {
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
       <div className="header-inner">
         <Link className="brand" href="/" aria-label="freenable 홈">
-          <BrandLogo />
+          <BrandLogo priority />
         </Link>
 
         <button
