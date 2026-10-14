@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   },
   description: "댄스·발레·필라테스·요가·피트니스 강사와 학원·센터를 연결하는 예체능 프리랜서 구인구직·대타 앱, 프리너블(freenable)입니다.",
   alternates: { canonical: "/" },
+  verification: {
+    other: { "naver-site-verification": "33c1ed7be14518f3143617830dc991953bbf67eb" },
+  },
   openGraph: {
     type: "website",
     locale: "ko_KR",
