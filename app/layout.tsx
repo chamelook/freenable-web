@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
+
+import { SITE } from "@/content/site";
+import { BASE_URL, STRUCTURED_DATA } from "@/content/structured-data";
 import "./globals.css";
 
 const spoqa = localFont({
@@ -13,7 +17,7 @@ const spoqa = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.freenable.co.kr"),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "프리너블(freenable) | 예체능 강사 구인구직·대타 앱",
     template: "%s | freenable",
@@ -41,7 +45,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
-      <body className={spoqa.variable}>{children}</body>
+      <body className={spoqa.variable}>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA).replace(/</g, "\\u003c") }} />
+        {children}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${SITE.gaMeasurementId}`} strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","${SITE.gaMeasurementId}");`}
+        </Script>
+      </body>
     </html>
   );
 }

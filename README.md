@@ -45,6 +45,17 @@ npm run build
 - `components/AppPreview.tsx`는 기능 설명용 화면입니다. 실제 앱 캡처나 실시간 공고가 아니며 화면에 예시임을 표시합니다. 실제 캡처로 교체할 때 공개 가능한 정보만 사용합니다.
 - 추후 실제 사용 화면을 기반으로 한 앱 스크린샷을 추가할 예정입니다.
 
+## 사이트 개편 시 유지할 것
+
+회사소개·채용 기능으로 페이지를 바꾸더라도 아래 항목은 유지합니다. `out/index.html`에서 GA4, 네이버 인증, `og:image`, JSON-LD 중 하나라도 빠지면 배포 워크플로가 실패합니다(`scripts/check-site-essentials.sh`).
+
+- [ ] `app/layout.tsx`의 공통 메타데이터(네이버 사이트 소유 확인, Open Graph·Twitter), JSON-LD(`content/structured-data.ts`), GA4 스크립트를 지우지 않습니다. 페이지별 내용은 각 `page.tsx`의 `metadata`에서 덮어씁니다.
+- [ ] 스토어 주소는 `content/site.ts`의 `SITE.appStore`·`SITE.googlePlay`(추적 파라미터 포함)만 참조합니다. 주소를 직접 하드코딩하지 않습니다. 스토어 버튼 클릭은 GA4 향상된 측정의 이탈 클릭(`click` 이벤트)으로 자동 수집됩니다.
+- [ ] 새 페이지를 만들면 `app/sitemap.ts`에 등록합니다.
+- [ ] 글꼴은 `public/fonts`의 WOFF2 서브셋을 사용합니다. 원본 TTF를 다시 넣지 않습니다.
+- [ ] 옛 주소(`/privacy.html`, `/terms.html`)는 스토어·검색엔진에 남아 있을 수 있으므로 `public/`의 이동용 파일을 지우지 않습니다.
+- [ ] 수집 항목이 바뀌면(예: 채용 지원서 입력) `content/privacy.html`을 함께 고칩니다.
+
 ## 다음 개발 단계
 
 1. Firebase 웹 설정과 환경변수 연결

@@ -1,7 +1,15 @@
-export const SITE = {
-  name: "freenable",
+// 스토어 원본 주소. 구조화 데이터(JSON-LD)처럼 추적 파라미터가 없어야 하는 곳에서 사용합니다.
+export const STORE_PROFILES = {
   appStore: "https://apps.apple.com/kr/app/%ED%94%84%EB%A6%AC%EB%84%88%EB%B8%94/id6770567266",
   googlePlay: "https://play.google.com/store/apps/details?id=com.free119.app",
+};
+
+export const SITE = {
+  name: "freenable",
+  gaMeasurementId: "G-1F0D415CMV",
+  // 설치 버튼용 주소. 스토어 콘솔에서 웹사이트 유입 설치를 구분할 수 있도록 추적 파라미터를 붙입니다.
+  appStore: `${STORE_PROFILES.appStore}?pt=128918909&ct=website&mt=8`,
+  googlePlay: `${STORE_PROFILES.googlePlay}&utm_source=website&utm_medium=cta&utm_campaign=website`,
   email: "contact@freenable.co.kr",
   appInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20앱%20이용%20문의",
   businessInquiry: "mailto:contact@freenable.co.kr?subject=freenable%20기업%20이용%20문의",

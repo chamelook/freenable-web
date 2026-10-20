@@ -8,47 +8,9 @@ import { AppPreview, PreviewStage } from "@/components/AppPreview";
 import { SITE } from "@/content/site";
 import { FEATURES } from "@/content/landing";
 
-const BASE_URL = "https://www.freenable.co.kr";
-
-const JSON_LD = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${BASE_URL}/#org`,
-      name: "프리너블",
-      alternateName: "freenable",
-      url: `${BASE_URL}/`,
-      logo: `${BASE_URL}/images/freenable-icon.png`,
-      email: SITE.email,
-      sameAs: [SITE.appStore, SITE.googlePlay],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${BASE_URL}/#website`,
-      name: "프리너블",
-      alternateName: "freenable",
-      url: `${BASE_URL}/`,
-      inLanguage: "ko-KR",
-      publisher: { "@id": `${BASE_URL}/#org` },
-    },
-    {
-      "@type": "MobileApplication",
-      name: "프리너블",
-      operatingSystem: "iOS, Android",
-      applicationCategory: "BusinessApplication",
-      description: "댄스·발레·필라테스·요가·피트니스 강사와 학원·센터를 연결하는 예체능 프리랜서 구인구직·대타 앱",
-      installUrl: SITE.googlePlay,
-      offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
-      publisher: { "@id": `${BASE_URL}/#org` },
-    },
-  ],
-};
-
 export default function Home() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD).replace(/</g, "\\u003c") }} />
       <a className="skip-link" href="#main">본문으로 바로가기</a>
       <SiteHeader />
       <main id="main">

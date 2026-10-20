@@ -36,6 +36,9 @@ jobs:
       - name: Build Next.js site
         run: npm run build
 
+      - name: Check site essentials
+        run: bash scripts/check-site-essentials.sh out
+
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
