@@ -247,6 +247,10 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
 .legal-content li { margin: 5px 0; }
 .legal-content a { color: var(--warm); text-decoration: underline; }
 .legal-content .note { color: #817b74; font-size: 13px; }
+.legal-content .table-scroll { margin: 12px 0 18px; overflow-x: auto; }
+.legal-content table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 13px; line-height: 1.6; }
+.legal-content th, .legal-content td { padding: 10px 12px; border: 1px solid var(--line); color: #48443f; text-align: left; vertical-align: top; }
+.legal-content th { background: var(--sand); font-weight: 700; white-space: nowrap; }
 .legal-content .biz-info { margin-top: 13px; padding: 20px 24px; background: var(--sand); border: 1px solid var(--sand-deep); border-radius: 10px; }
 .legal-content .biz-info li { list-style: none; }
 .legal-content ul.biz-info { padding-left: 24px; }
