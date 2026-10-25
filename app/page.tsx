@@ -23,11 +23,11 @@ export default function Home() {
               <AppDownloadLinks />
               <a href="#about" className="hero-explore">서비스 둘러보기 <span aria-hidden="true">↓</span></a>
             </div>
-            <PreviewStage className="hero-stage"><AppPreview kind="substitute" className="hero-phone-back" /><AppPreview kind="jobs" className="hero-phone-front" /></PreviewStage>
+            <PreviewStage className="hero-stage"><AppPreview kind="detail" className="hero-phone-back" eager /><AppPreview kind="jobs" className="hero-phone-front" eager /></PreviewStage>
           </div>
         </section>
         <section className="introduction section" id="about" aria-labelledby="about-title"><p className="eyebrow">수업을 찾는 일부터, 조금 더 편하게</p><h2 id="about-title">일을 찾는 시간은 줄이고,<br /><span>좋아하는 수업에 더 집중하세요.</span></h2><p>새로운 수업을 찾는 강사와, 함께할 강사를 찾는 센터.<br />프리너블이 서로에게 필요한 연결을 만들어갑니다.</p></section>
-        <div className="features">{FEATURES.map((feature, index) => <section className={`feature-band feature-band-${feature.kind}`} key={feature.id} id={feature.id} aria-labelledby={`${feature.id}-title`}><div className={`feature-inner section ${index % 2 ? "feature-reverse" : ""}`}><div className="feature-copy"><p className="eyebrow">{feature.label}</p><h2 id={`${feature.id}-title`}>{feature.title}</h2><p>{feature.description}</p><span className="feature-detail">{feature.detail}</span></div><PreviewStage><AppPreview kind={feature.kind} />{feature.kind === "jobs" && <div className="floating-note"><span className="note-icon" aria-hidden="true">⌕</span><div><strong>나에게 맞는 조건으로</strong><p>분야 · 지역 · 수업 일정</p></div></div>}{feature.kind === "substitute" && <div className="floating-note"><span className="note-icon" aria-hidden="true">▦</span><div><strong>가능한 시간에, 새로운 수업</strong><p>일정을 확인하고 지원해요</p></div></div>}{feature.kind === "profile" && <div className="floating-note"><span className="note-icon" aria-hidden="true">✓</span><div><strong>나의 전문성을 한곳에</strong><p>소개 · 경력 · 자격</p></div></div>}</PreviewStage></div></section>)}</div>
+        <div className="features">{FEATURES.map((feature, index) => <section className={`feature-band feature-band-${feature.kind}`} key={feature.id} id={feature.id} aria-labelledby={`${feature.id}-title`}><div className={`feature-inner section ${index % 2 ? "feature-reverse" : ""}`}><div className="feature-copy"><p className="eyebrow">{feature.label}</p><h2 id={`${feature.id}-title`}>{feature.title}</h2><p>{feature.description}</p><span className="feature-detail">{feature.detail}</span></div><PreviewStage><AppPreview kind={feature.kind} />{feature.kind === "jobs" && <div className="floating-note"><span className="note-icon" aria-hidden="true">⌕</span><div><strong>나에게 맞는 조건으로</strong><p>분야 · 지역 · 수업 일정</p></div></div>}{feature.kind === "substitute" && <div className="floating-note"><span className="note-icon" aria-hidden="true">▦</span><div><strong>가능한 시간에, 새로운 수업</strong><p>일정을 확인하고 지원해요</p></div></div>}{feature.kind === "talent" && <div className="floating-note"><span className="note-icon" aria-hidden="true">✓</span><div><strong>센터가 프로필을 보고 제안해요</strong><p>장르 · 활동 지역별 강사찾기</p></div></div>}</PreviewStage></div></section>)}</div>
         <section className="app-section" id="app" aria-labelledby="app-title"><div className="section app-inner"><Image className="app-symbol" src="/images/freenable-icon.png" alt="프리너블 앱 로고" width={88} height={88} unoptimized /><h2 id="app-title">당신의 다음 수업,<br />프리너블에서 시작해요.</h2><p>좋아하는 일을 오래, 나답게.<br />지금 앱을 다운로드하고 나에게 맞는 수업을 찾아보세요.</p><AppDownloadLinks /><p className="app-note">iPhone과 Android에서 이용할 수 있어요.<br />공고 확인부터 지원까지, 앱에서 간편하게.</p></div></section>
       </main>
       <SiteFooter />
@@ -38,7 +38,7 @@ function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="footer-main">
-        <div className="footer-brand"><BrandLogo /><p>예체능 프리랜서의 가능성을<br />좋은 일과 연결합니다.</p></div>
+        <div className="footer-brand"><BrandLogo /></div>
         <div className="footer-links">
           <div><strong>서비스</strong><a href="#jobs">채용공고</a><a href="#substitute">긴급 대타</a><a href="#talent">강사 프로필</a></div>
           <div><strong>안내</strong><Link href="#about">서비스 소개</Link><a href={`mailto:${SITE.email}`}>고객문의</a><Link href="/terms">이용약관</Link><Link href="/privacy">개인정보처리방침</Link></div>

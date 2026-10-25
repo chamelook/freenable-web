@@ -42,7 +42,6 @@ img { max-width: 100%; }
 .menu-button { display: none; }
 .site-footer { width: min(calc(100% - 80px), var(--max)); margin: auto; padding: 70px 0 35px; color: var(--muted); }
 .footer-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; padding-bottom: 55px; }
-.footer-brand p { margin: 18px 0 0; font-size: 13px; line-height: 1.8; }
 .footer-links { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; }
 .footer-links div { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; }
 .footer-links strong { color: var(--ink); font-size: 12px; margin-bottom: 5px; }
@@ -93,64 +92,17 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
 .feature-reverse .preview-stage { grid-column: 1; grid-row: 1; }
 .preview-stage { position: relative; display: flex; justify-content: center; align-items: center; min-width: 0; padding: 12px 0 42px; }
 .preview-disclaimer { position: absolute; bottom: 0; left: 0; width: 100%; font-size: 10px; text-align: center; color: var(--muted); margin: 0; }
-.phone { width: 270px; height: 548px; flex: 0 0 270px; background: #fff; border: 6px solid #fff; border-radius: 39px; position: relative; box-shadow: 0 24px 40px #53402b1f, 0 3px 5px #53402b0d; color: var(--ink); overflow: hidden; text-align: left; }
-.phone-status { height: 31px; display: flex; align-items: center; justify-content: space-between; padding: 0 17px; font-size: 9px; font-weight: 700; position: relative; }
-.phone-island { width: 64px; height: 16px; border-radius: 20px; background: #242424; position: absolute; left: 50%; transform: translateX(-50%); top: 5px; }
-.phone-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px 13px; border-bottom: 1px solid var(--line); }
-.phone-header .brand-logo { width: 86px; }
-.preview-label { color: var(--muted); font-size: 8px; }
-.phone-body { padding: 20px 14px; }
-.phone-body .phone-title { margin-bottom: 8px; font-size: 21px; font-weight: 700; letter-spacing: -.045em; }
-.phone-intro { font-size: 10px; color: var(--muted); margin-bottom: 19px; }
-.phone-tabs { display: flex; gap: 19px; border-bottom: 1px solid var(--line); margin: 0 -14px; padding: 0 14px; font-size: 11px; color: var(--muted); }
-.phone-tabs span { padding: 0 0 10px; }
-.phone-tabs .selected { border-bottom: 2px solid var(--accent); color: var(--ink); font-weight: 700; }
-.phone-filters { display: flex; gap: 6px; margin: 13px 0; }
-.phone-filters span { border: 1px solid var(--line); border-radius: 20px; font-size: 9px; padding: 5px 9px; }
-.preview-job { padding: 12px 0; border-bottom: 1px solid var(--line); }
-.preview-tag { display: inline-block; color: var(--warm); font-size: 8px; border-radius: 4px; background: #f8efe7; padding: 4px 6px; }
-.preview-job .preview-job-title { font-size: 12px; margin: 8px 0 6px; font-weight: 500; letter-spacing: -.03em; }
-.preview-job > p { color: var(--muted); font-size: 9px; margin-bottom: 10px; }
-.preview-job-bottom { display: flex; justify-content: space-between; font-size: 8px; color: var(--muted); }
-.phone-nav { position: absolute; bottom: 14px; left: 0; right: 0; background: white; display: flex; justify-content: space-around; border-top: 1px solid var(--line); padding: 10px 5px 4px; }
-.phone-nav > span { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 17px; color: #9c9895; }
-.phone-nav small { font-size: 7px; }
-.phone-nav > .selected { color: var(--warm); }
-.home-indicator { position: absolute; bottom: 4px; left: 50%; width: 80px; height: 3px; border-radius: 10px; background: #282828; transform: translateX(-50%); }
-.schedule-strip { display: flex; justify-content: space-between; padding: 3px 0 16px; }
-.schedule-strip > span { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 20px; }
-.schedule-strip small { font-size: 9px; }
-.schedule-strip b { font-size: 12px; }
-.schedule-strip .selected { color: white; background: var(--accent); }
-.substitute-job { padding: 16px; border: 1px solid var(--sand-deep); border-radius: 14px; background: #fdfaf6; }
-.substitute-job .preview-job-title { font-size: 16px; line-height: 1.6; margin: 10px 0 14px; }
-.substitute-job dl { font-size: 10px; margin: 0 0 15px; }
-.substitute-job dl > div { display: flex; justify-content: space-between; margin: 8px 0; }
-.substitute-job dt { color: var(--muted); }
-.substitute-job dd { margin: 0; }
-.preview-action { display: block; background: var(--ink); color: white; text-align: center; font-size: 10px; padding: 10px; border-radius: 7px; }
-.phone-notice { display: flex; align-items: center; gap: 10px; padding: 17px 5px; font-size: 9px; color: var(--muted); }
-.phone-notice > span { color: var(--accent); font-size: 18px; }
-.phone-notice p { margin: 0; line-height: 1.8; }
-.phone-notice strong { font-weight: 500; }
-.profile-intro { text-align: center; padding: 10px 0 20px; border-bottom: 1px solid var(--line); }
-.profile-monogram { width: 58px; height: 58px; border-radius: 50%; background: var(--sand); display: grid; place-items: center; font-size: 27px; font-weight: 500; color: var(--warm); margin: auto auto 12px; }
-.profile-intro .profile-name { margin: 0 0 7px; font-size: 14px; font-weight: 700; }
-.profile-intro p { margin: 0 0 12px; font-size: 9px; color: var(--muted); }
-.profile-tags { display: flex; justify-content: center; gap: 6px; }
-.profile-tags span { font-size: 8px; background: var(--sand); padding: 5px 8px; border-radius: 10px; }
-.profile-row { border-bottom: 1px solid var(--line); padding: 14px 0; }
-.profile-row .profile-row-title { font-size: 11px; font-weight: 700; margin: 0 0 8px; }
-.profile-row p { font-size: 9px; color: var(--muted); margin: 0; }
+.phone { width: 270px; flex: 0 0 270px; padding: 8px; border-radius: 44px; background: #1c1b19; box-shadow: 0 0 0 1.5px #3a3733 inset, 0 30px 50px #603c2029, 0 8px 18px #603c2017; position: relative; }
+.phone-screen { display: block; width: 100%; height: auto; aspect-ratio: 780 / 1688; border-radius: 36px; background: #faf9f6; }
 .floating-note { position: absolute; left: -20px; bottom: 100px; background: white; border-radius: 17px; padding: 20px 23px; display: flex; align-items: center; gap: 15px; box-shadow: 0 12px 30px #53402b12; z-index: 2; }
 .note-icon { display: grid; place-items: center; background: var(--sand); color: var(--warm); width: 38px; height: 38px; border-radius: 12px; font-size: 22px; }
 .floating-note strong { font-size: 12px; font-weight: 500; }
 .floating-note p { color: var(--muted); font-size: 10px; margin: 7px 0 0; }
-.hero-stage { height: 660px; padding: 0; }
+.hero-stage { height: 700px; padding: 0; }
 .hero-stage .phone { position: absolute; }
 .hero-phone-back { left: 0; top: 57px; transform: rotate(-9deg) scale(.86); transform-origin: center; }
-.hero-phone-front { right: 4px; top: 113px; transform: rotate(7deg); }
-.hero-stage .preview-disclaimer { bottom: 15px; }
+.hero-phone-front { right: 4px; top: 88px; transform: rotate(7deg); }
+.hero-stage .preview-disclaimer { bottom: 4px; }
 .app-section { background: var(--sand); margin-top: 100px; }
 .app-inner { padding: 110px 0 95px; text-align: center; }
 .app-symbol { border-radius: 21px; display: block; margin: 0 auto 30px; }
@@ -191,7 +143,7 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
  .store-link { min-width: 0; min-height: 54px; padding: 14px 18px; gap: 9px; font-size: 14px; }
  .store-link svg { width: 21px; height: 23px; }
  .hero-explore { margin-top: 16px; font-size: 12px; }
- .hero-stage { width: 360px; height: 580px; flex: 0 0 580px; transform: scale(.8); transform-origin: center top; margin-bottom: -75px; margin-top: 28px; }
+ .hero-stage { width: 360px; height: 620px; flex: 0 0 620px; transform: scale(.8); transform-origin: center top; margin-bottom: -83px; margin-top: 28px; }
  .hero-phone-back { left: -8px; top: 10px; transform: rotate(-9deg) scale(.85); }
  .hero-phone-front { right: -8px; top: 50px; transform: rotate(7deg) scale(.88); }
  .hero-stage .preview-disclaimer { bottom: 5px; font-size: 12px; }
@@ -217,10 +169,9 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
 }
 @media (max-width: 370px) {
  .phone { width: 235px; flex-basis: 235px; }
- .preview-stage:not(.hero-stage) .phone { height: 548px; }
  .floating-note { left: -12px; padding: 12px; }
  .feature-inner { padding-left: 16px; padding-right: 16px; }
- .hero-stage { transform: scale(.72); margin-bottom: -120px; }
+ .hero-stage { transform: scale(.72); margin-bottom: -132px; }
 }
 @media (prefers-reduced-motion: reduce) {
  html { scroll-behavior: auto; }

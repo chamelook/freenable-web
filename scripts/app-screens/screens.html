@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>freenable 앱 화면</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons&family=Material+Icons+Outlined&family=Material+Icons+Round&display=block" rel="stylesheet">
+<!-- 앱 저장소 marketing/store_screenshots/slides.html의 화면 재현 코드를 옮겨 왔습니다. 데이터는 모두 가상입니다. -->
+<style>
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2');font-weight:700}
+
+:root{
+  --bg:#E8D5C0;      /* AppColors.featuredBorder */
+  --ink:#191F28; --sub:#7A6E64;
+  --accent:#C48A6A;  /* AppColors.primary */
+}
+*{box-sizing:border-box;word-break:keep-all}
+html,body{margin:0;padding:0}
+body{position:relative;overflow:hidden;width:390px;height:844px;background:#FAF9F6;font-family:Spoqa,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+
+/* ---------- 앱 화면 (Flutter 논리 px 그대로) ---------- */
+.screen{position:absolute;left:0;top:0;width:390px;height:844px;background:#FAF9F6;overflow:hidden;font-family:Spoqa;color:#191F28;transform-origin:0 0}
+.mi{font-weight:normal;font-style:normal;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;font-feature-settings:'liga';-webkit-font-smoothing:antialiased;display:inline-block;flex:none}
+
+.sb{position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between}
+.sb.ios{height:47px;padding:4px 26px 0 48px;font:600 17px -apple-system,'SF Pro Text',sans-serif;letter-spacing:-.3px}
+.sb.and{height:36px;padding:0 20px;font:500 14px Roboto,-apple-system,sans-serif}
+.sb .r{display:flex;align-items:center;gap:6px}
+.island{position:absolute;z-index:10;left:133px;top:11px;width:124px;height:36px;border-radius:18px;background:#000}
+.punch{position:absolute;z-index:10;left:189px;top:12px;width:12px;height:12px;border-radius:50%;background:#111}
+.homebar{position:absolute;z-index:10;left:50%;transform:translateX(-50%);background:#191F28;border-radius:3px}
+
+.ab{height:56px;display:flex;align-items:center;justify-content:space-between;background:#FAF9F6}
+.ab-t{padding-left:20px;font-size:20px;font-weight:700}
+.ab-a{display:flex;align-items:center;padding-right:8px}
+.ib{width:48px;height:48px;display:flex;align-items:center;justify-content:center;position:relative}
+
+.fb{display:flex;gap:8px;padding:0 16px 12px;white-space:nowrap;overflow:hidden}
+.chip{padding:8px 12px;border-radius:20px;font-size:13px;line-height:16px;border:1px solid #E0E0E0;background:#FAF9F6;color:rgba(0,0,0,.87);flex:none}
+.chip.on{background:#000;border-color:#000;color:#fff}
+.hr{height:1px;background:#EEEEEE}
+
+.sh{padding:12px 16px 8px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+
+.row{position:relative;height:120px;padding:12px 16px;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid #F0F0F0;background:#FAF9F6}
+.row.sp{background:#FDFAF6;border-left:3px solid #E8D5C0;padding-left:13px}
+.l1{display:flex;align-items:center;height:20px}
+.biz{font-size:12px;color:#9E9E9E;line-height:1.2;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ago{font-size:11px;color:#757575;margin:0 8px}
+.l2{display:flex;align-items:center}
+.gb{width:48px;height:18px;border:1px solid var(--c);color:var(--c);border-radius:4px;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.l2 .gb{margin-right:8px}
+.tt{font-size:15px;font-weight:700;color:#000;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.l3{font-size:12px;color:#757575;line-height:1.05}
+.l4{font-size:12px;font-weight:700;color:#9E9E9E;padding-right:80px}
+.apply{position:absolute;right:16px;bottom:12px;width:72px;height:30px;border-radius:4px;border:1px solid #E0E0E0;background:#FAF9F6;font-size:12px;color:rgba(0,0,0,.87);display:flex;align-items:center;justify-content:center}
+.badge-sp{display:inline-flex;align-items:center;gap:2px;background:#FDFAF6;border:1px solid #E8D5C0;color:#C48A6A;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:700;margin-right:6px;flex:none}
+
+.bn{position:absolute;z-index:4;left:0;right:0;bottom:0;background:#FAF9F6;border-top:.5px solid #E0E0E0}
+.bn-in{display:flex;height:56px}
+.bn-i{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;color:#8B95A1}
+.bn-i.on{color:#191F28;font-weight:700}
+
+.fab{position:absolute;z-index:4;right:16px;width:120px;height:56px;border-radius:28px;background:#C48A6A;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:700;box-shadow:0 4px 8px rgba(196,138,106,.3)}
+
+/* 공고 상세 */
+.hero{position:absolute;left:0;top:0;width:390px;height:230px;background:#BDBDBD;display:flex;align-items:center;justify-content:center}
+.sheet{position:absolute;left:0;right:0;top:210px;bottom:0;background:#FAF9F6;border-radius:24px 24px 0 0;padding:24px 24px 16px}
+.d-title{font-size:22px;font-weight:700;line-height:1.3;letter-spacing:-.2px}
+.d-biz{display:flex;align-items:center;gap:4px;margin-top:8px;font-size:14px;font-weight:700}
+.d-h{font-size:18px;font-weight:700}
+.cond{display:flex;align-items:center;padding:13px 0;border-bottom:1px solid #E5E8EB}
+.cond:last-child{border-bottom:none}
+.cond .k{width:64px;font-size:13px;color:#9E9E9E;flex:none}
+.cond .v{font-size:14px;font-weight:700;color:rgba(0,0,0,.87)}
+.pill{padding:2px 8px;border-radius:20px;border:1px solid #C48A6A;color:#C48A6A;font-size:11px;font-weight:700;margin-right:8px}
+.d-body{font-size:16px;line-height:1.55;color:#191F28;white-space:pre-line}
+.cta{position:absolute;z-index:4;left:0;right:0;bottom:0;background:#fff;padding:12px 20px;display:flex;gap:12px;box-shadow:0 -5px 10px rgba(0,0,0,.05)}
+.scrap{width:52px;height:52px;border-radius:12px;background:#F5F5F5;border:1px solid #E0E0E0;display:flex;align-items:center;justify-content:center;flex:none}
+.go{flex:1;height:52px;border-radius:12px;background:#191F28;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+/* 강사찾기 */
+.search{margin:12px 16px 20px;height:48px;border-radius:12px;background:#fff;box-shadow:0 4px 10px rgba(0,0,0,.05);display:flex;align-items:center;padding:0 16px;gap:10px;font-size:15px;color:#BDBDBD}
+.list{padding:0 20px}
+.lh{display:flex;align-items:center;gap:6px;margin-bottom:16px}
+.lh b{font-size:16px}
+.lh small{font-size:12px;color:#8B95A1;margin-left:2px}
+.card{position:relative;display:flex;gap:16px;padding:16px;border-radius:16px;background:#fff;border:1px solid #EEEEEE;box-shadow:0 4px 10px rgba(0,0,0,.03);margin-bottom:16px}
+.card.sp{background:#FDFAF6;border-color:#E8D5C0;box-shadow:0 4px 14px rgba(212,168,83,.12)}
+.av{width:72px;height:72px;border-radius:50%;background:#F5F5F5;display:flex;align-items:center;justify-content:center;flex:none}
+.cname{display:flex;align-items:center;font-size:16px;font-weight:700}
+.gbs{display:flex;gap:6px;margin-top:6px}
+.meta{font-size:13px;color:#757575;line-height:1.4;margin-top:8px}
+.card .arr{position:absolute;right:16px;top:18px}
+.card .heart{position:absolute;right:14px;bottom:14px}
+</style>
+</head>
+<body>
+<script>
+// ?s=jobs|substitute|detail|talent → 390x844 앱 화면 한 장
+const Q = new URLSearchParams(location.search);
+const IOS = true;
+const SAFE_B = 34;
+const GENRE = {
+  발레:'#C48A6A', 현대무용:'#C48A6A', 한국무용:'#C48A6A', 방송댄스:'#C48A6A', 폴댄스:'#C48A6A',
+  필라테스:'#97A860', 요가:'#97A860', PT:'#97A860', 기타:'#919191',
+};
+
+function ic(name, size = 24, color = 'currentColor') {
+  let fam = 'Material Icons', n = name;
+  if (name.endsWith('_outlined')) { fam = 'Material Icons Outlined'; n = name.slice(0, -9); }
+  else if (name.endsWith('_rounded')) { fam = 'Material Icons Round'; n = name.slice(0, -8); }
+  return `<span class="mi" style="font-family:'${fam}';font-size:${size}px;color:${color}">${n}</span>`;
+}
+const gb = g => `<span class="gb" style="--c:${GENRE[g]}">${g}</span>`;
+
+// ---------- 공통 크롬 ----------
+function statusBar(dark = '#000') {
+  if (IOS) {
+    return `<div class="sb ios" style="color:${dark}"><span>9:41</span><span class="r">
+      <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="${dark}"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="${dark}"/><rect x="10" y="3" width="3" height="9" rx="1" fill="${dark}"/><rect x="15" y="0" width="3" height="12" rx="1" fill="${dark}"/></svg>
+      <svg width="16" height="12" viewBox="0 0 16 12"><path d="M8 2.4c2.3 0 4.4.9 6 2.4l1.2-1.2A10.2 10.2 0 0 0 8 .7 10.2 10.2 0 0 0 .8 3.6L2 4.8a8.5 8.5 0 0 1 6-2.4Zm0 3.4c1.4 0 2.6.5 3.6 1.4l1.2-1.2A6.8 6.8 0 0 0 8 4.1a6.8 6.8 0 0 0-4.8 1.9l1.2 1.2c1-.9 2.2-1.4 3.6-1.4Zm0 3.4c.5 0 1 .2 1.3.5L8 11 6.7 9.7c.3-.3.8-.5 1.3-.5Z" fill="${dark}"/></svg>
+      <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="${dark}" stroke-opacity=".4"/><rect x="2" y="2" width="20" height="9" rx="2" fill="${dark}"/><path d="M25 4.5v4c.8-.3 1.3-1.1 1.3-2s-.5-1.7-1.3-2Z" fill="${dark}" fill-opacity=".45"/></svg>
+    </span></div><div class="island"></div>`;
+  }
+  return `<div class="sb and" style="color:${dark}"><span>9:41</span><span class="r">${ic('signal_cellular_alt', 16, dark)}${ic('wifi', 16, dark)}${ic('battery_full', 16, dark)}</span></div><div class="punch"></div>`;
+}
+const homeBar = () => IOS
+  ? `<div class="homebar" style="bottom:8px;width:134px;height:5px"></div>`
+  : `<div class="homebar" style="bottom:7px;width:108px;height:4px;opacity:.7"></div>`;
+
+function appBar(title, actions = true) {
+  return `<div class="ab"><div class="ab-t">${title}</div>${actions ? `<div class="ab-a">
+    <span class="ib">${ic('search', 24, '#191F28')}</span>
+    <span class="ib">${ic('notifications_none', 24, '#191F28')}<span style="position:absolute;right:12px;top:12px;width:8px;height:8px;border-radius:50%;background:#E84444"></span></span>
+  </div>` : ''}</div>`;
+}
+
+function bottomNav(role, active) {
+  const tabs = role === 'freelancer'
+    ? [['채용정보', 'description'], ['대타구해요', 'campaign'], ['지원현황', 'assignment'], ['마이페이지', 'person']]
+    : [['채용관리', 'description'], ['대타구해요', 'campaign'], ['강사찾기', 'search'], ['마이페이지', 'person']];
+  const off = n => n === 'person' ? 'person_outline' : n === 'search' ? 'search' : `${n}_outlined`;
+  return `<div class="bn" style="padding-bottom:${SAFE_B}px"><div class="bn-in">${tabs.map(([label, icon], i) =>
+    `<div class="bn-i ${i === active ? 'on' : ''}">${ic(i === active ? icon : off(icon), 24)}<span>${label}</span></div>`).join('')}</div></div>`;
+}
+
+const filterBar = chips => `<div class="fb">${chips.map(([t, on]) => `<span class="chip ${on ? 'on' : ''}">${t}</span>`).join('')}</div><div class="hr"></div>`;
+
+function jobRow(r) {
+  return `<div class="row ${r.sp ? 'sp' : ''}">
+    <div class="l1">${r.sp ? `<span class="badge-sp">${ic('workspace_premium_rounded', 12, '#C48A6A')}스페셜</span>` : ''}<span class="biz">${r.biz}</span><span class="ago">${r.ago}</span>${ic(r.mark ? 'bookmark' : 'bookmark_border', 20, r.mark ? '#F2B705' : '#9E9E9E')}<span style="width:4px"></span></div>
+    <div class="l2">${gb(r.genre)}<span class="tt">${r.title}</span></div>
+    <div class="l3">${r.info}</div>
+    <div class="l4">${r.loc}</div>
+    <div class="apply">${r.done ? '' : '지원하기'}</div>
+  </div>`;
+}
+
+// ---------- 화면 4종 ----------
+function screenJobs() {
+  const rows = [
+    {sp:1, biz:'모아 필라테스 역삼점', ago:'12분전', genre:'필라테스', title:'평일 오전 그룹 필라테스 강사 모집', info:'성인 · 10:00 ~ 12:00 · 월,수,금', loc:'서울 강남구 · 시급 45,000원'},
+    {biz:'소담 발레스튜디오', ago:'1시간전', genre:'발레', title:'취미발레 성인반 주말 강사 구합니다', info:'성인 · 14:00 ~ 16:00 · 토,일', loc:'서울 강남구 · 시급 50,000원', mark:1},
+    {biz:'결 요가', ago:'3시간전', genre:'요가', title:'아침 빈야사 요가 정규 강사 모집', info:'성인 · 07:00 ~ 08:00 · 화,목', loc:'서울 강남구 · 시급 40,000원'},
+    {biz:'리듬앤바디 댄스', ago:'5시간전', genre:'방송댄스', title:'키즈 방송댄스 방과후 강사 모집', info:'유아 · 15:00 ~ 17:00 · 화,목', loc:'서울 강남구 · 시급 35,000원'},
+    {biz:'하루무용학원', ago:'10/08', genre:'한국무용', title:'입시 한국무용 전공반 강사', info:'전체 · 18:00 ~ 21:00 · 월,수,금', loc:'서울 강남구 · 일급 150,000원'},
+  ];
+  return `${statusBar()}${appBar('채용정보')}
+    ${filterBar([['지역: 서울 강남구', 1], ['장르: 전체'], ['연령대: 전체'], ['초기화']])}
+    <div class="sh" style="color:#C48A6A">${ic('workspace_premium_rounded', 16, '#C48A6A')}스페셜 공고</div>
+    ${jobRow(rows[0])}
+    <div class="sh" style="color:#8B95A1">일반 공고</div>
+    ${rows.slice(1).map(jobRow).join('')}
+    ${bottomNav('freelancer', 0)}${homeBar()}`;
+}
+
+function screenSubstitute() {
+  const rows = [
+    {biz:'한결 필라테스', ago:'8분전', genre:'필라테스', title:'이번주 토요일 오전 필라테스 대타 구해요', info:'성인 · 10/11 · 10:00 ~ 12:00', loc:'서울 마포구 · 시급 50,000원'},
+    {biz:'발레하는지안', ago:'40분전', genre:'발레', title:'일요일 키즈발레 2타임 대타 부탁드려요', info:'유아 · 10/12 · 11:00 ~ 13:00', loc:'서울 마포구 · 시급 40,000원', mark:1},
+    {biz:'숨 요가원', ago:'2시간전', genre:'요가', title:'월요일 저녁 하타요가 1회 대타', info:'성인 · 10/13 · 19:30 ~ 20:30', loc:'서울 마포구 · 시급 45,000원'},
+    {biz:'무브 댄스아카데미', ago:'4시간전', genre:'방송댄스', title:'중등부 K-POP 클래스 대타 강사', info:'전체 · 10/14 · 18:00 ~ 20:00', loc:'서울 마포구 · 시급 40,000원'},
+    {biz:'늘봄 시니어 필라테스', ago:'6시간전', genre:'필라테스', title:'시니어 소도구 필라테스 대타', info:'시니어 · 10/15 · 10:00 ~ 11:00', loc:'서울 마포구 · 시급 45,000원'},
+  ];
+  return `${statusBar()}${appBar('대타구해요')}
+    ${filterBar([['지역: 서울 마포구', 1], ['장르: 전체'], ['연령대: 전체'], ['초기화']])}
+    ${rows.map(jobRow).join('')}
+    <div class="fab" style="bottom:${56 + SAFE_B + 16}px">${ic('edit', 24, '#fff')}글쓰기</div>
+    ${bottomNav('freelancer', 1)}${homeBar()}`;
+}
+
+function screenDetail() {
+  const cond = [
+    ['급여', `<span class="pill">시급</span><span class="v" style="font-size:15px">50,000원</span>`],
+    ['근무요일', '<span class="v">토, 일</span>'],
+    ['근무시간', '<span class="v">14:00 ~ 16:00</span>'],
+    ['수강대상', '<span class="v">성인</span>'],
+    ['장르', '<span class="v">발레</span>'],
+  ];
+  return `<div class="hero">${ic('apartment_rounded', 64, '#fff')}</div>
+    <div style="position:absolute;left:0;right:0;top:0">${statusBar('#191F28')}
+      <div class="ab" style="background:transparent"><span class="ib" style="margin-left:4px">${ic('arrow_back_ios_new', 22, '#191F28')}</span><span class="ib" style="margin-right:4px">${ic('menu', 24, '#191F28')}</span></div></div>
+    <div class="sheet">
+      <div class="d-title">취미발레 성인반 주말 강사 구합니다</div>
+      <div class="d-biz">${ic('apartment_rounded', 18, '#9E9E9E')}<span>소담 발레스튜디오</span>${ic('chevron_right_rounded', 18, '#8B95A1')}</div>
+      <div class="d-h" style="margin-top:24px;margin-bottom:6px">근무조건</div>
+      ${cond.map(([k, v]) => `<div class="cond"><span class="k">${k}</span>${v}</div>`).join('')}
+      <div class="d-h" style="margin-top:28px;margin-bottom:12px">상세 내용</div>
+      <div class="d-body">주말 성인 취미발레 클래스를 함께할 강사님을 찾습니다.
+· 정원 8명, 초·중급 수준
+· 바 워크 중심, 커리큘럼 자율 구성</div>
+    </div>
+    <div class="cta" style="padding-bottom:${12 + SAFE_B}px"><div class="scrap">${ic('bookmark_border', 24, '#9E9E9E')}</div><div class="go">지원하기</div></div>
+    ${homeBar()}`;
+}
+
+function screenFreelancers() {
+  const card = c => `<div class="card ${c.sp ? 'sp' : ''}">
+      <div class="av">${ic('person', 40, '#BDBDBD')}</div>
+      <div style="flex:1;min-width:0;padding-top:2px">
+        <div class="cname">${c.sp ? `<span class="badge-sp">${ic('workspace_premium_rounded', 12, '#C48A6A')}스페셜</span>` : ''}${c.name}</div>
+        <div class="gbs">${c.genres.map(gb).join('')}</div>
+        <div class="meta">${c.meta}</div>
+      </div>
+      <span class="arr">${ic('arrow_forward_ios', 14, '#9E9E9E')}</span>
+      <span class="heart">${ic(c.fav ? 'favorite' : 'favorite_border', 24, c.fav ? '#E84444' : '#9E9E9E')}</span>
+    </div>`;
+  return `${statusBar()}<div class="ab"><div class="ab-t">강사찾기</div><div class="ab-a"><span class="ib">${ic('notifications_none', 24, '#191F28')}</span></div></div>
+    <div class="search">${ic('search', 20, '#BDBDBD')}<span>장르, 지역으로 찾아보세요</span></div>
+    <div class="list">
+      <div class="lh">${ic('workspace_premium_rounded', 16, '#D4A853')}<b>스페셜 강사</b><small style="color:#C48A6A">상단 노출 1명</small></div>
+      ${card({sp:1, name:'김서윤', genres:['발레', '현대무용'], meta:'20대 · 서울 강남구 외 2'})}
+      <div class="lh"><b>전체 강사</b></div>
+      ${card({name:'이하린', genres:['필라테스', '요가'], meta:'30대 · 서울 서초구 외 1', fav:1})}
+      ${card({name:'박도윤', genres:['방송댄스'], meta:'20대 · 경기 성남시'})}
+      ${card({name:'최유나', genres:['한국무용', '발레'], meta:'30대 · 서울 송파구'})}
+    </div>
+    ${bottomNav('business', 2)}${homeBar()}`;
+}
+
+
+const SCREENS = {jobs: screenJobs, substitute: screenSubstitute, detail: screenDetail, talent: screenFreelancers};
+const render = SCREENS[Q.get('s')] || screenJobs;
+// 아이콘·본문 폰트를 먼저 받아둔 뒤 그려야 헤드리스 캡처에서 빠지지 않음
+Promise.all([
+  "24px 'Material Icons'", "24px 'Material Icons Outlined'", "24px 'Material Icons Round'",
+  '400 16px Spoqa', '500 16px Spoqa', '700 16px Spoqa',
+].map(f => document.fonts.load(f, 'a'))).then(() => document.fonts.ready).then(() => {
+  const screen = document.createElement('div');
+  screen.className = 'screen';
+  screen.innerHTML = render();
+  document.body.appendChild(screen);
+});
+</script>
+</body>
+</html>
