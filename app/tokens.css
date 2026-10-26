@@ -15,6 +15,7 @@
   --color-accent-text: #8a5539; --color-surface: #fffcf8; --color-ink-quiet: #68605a;
   --color-on-ink: #fbfaf8; --color-on-ink-muted: #c9c4bd; --color-ink-hover: #2a313b; --color-focus-on-ink: #e8d5c0;
   --color-frame: #191f2817; --color-shadow-nav: #53402b14;
+  --color-bezel: #1c1b19; --color-bezel-edge: #3a3733; --bezel: 10px; --shadow-device: 0 30px 60px #603c201f, 0 8px 20px #603c2014;
   --font-display: var(--font-spoqa), "Spoqa Han Sans Neo", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   --font-body: var(--font-spoqa), "Spoqa Han Sans Neo", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   --font-outlier: var(--font-body);
