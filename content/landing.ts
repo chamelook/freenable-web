@@ -9,7 +9,16 @@ export const APP_SCREENS: Record<AppScreenKind, string> = {
 };
 
 export const FEATURES = [
-  { id: "jobs", kind: "jobs" as const, label: "채용공고", title: "내게 맞는 수업을,\n한눈에", description: "여기저기 흩어진 수업 일자리.\n분야와 지역, 수업 조건을 살펴보고\n나에게 맞는 기회를 찾아보세요.", detail: "댄스, 발레, 필라테스, 요가, 피트니스", screen: "detail" as const, note: { title: "나에게 맞는 조건으로", text: "분야, 지역, 수업 일정" } },
-  { id: "substitute", kind: "substitute" as const, label: "대타 연결", title: "빈 수업과 빈 시간의\n반가운 만남", description: "갑자기 수업을 맡길 선생님이 필요할 때,\n새로운 수업을 맡을 여유가 생겼을 때.\n날짜와 지역, 분야를 확인하고 연결해요.", detail: "공고 등록부터 지원까지, 앱에서 간편하게", screen: "substitute" as const, note: { title: "가능한 시간에, 새로운 수업", text: "일정을 확인하고 지원해요" } },
-  { id: "talent", kind: "talent" as const, label: "강사 프로필", title: "나의 경험이\n다음 기회가 되도록", description: "어떤 수업을 해왔는지, 무엇을 잘하는지.\n소개와 경력, 전문 분야를 프로필에 담아\n함께할 센터에 나를 알려보세요.", detail: "가르치는 사람과 공간을 만드는 사람을 연결해요", screen: "talent" as const, note: { title: "센터가 프로필을 보고 제안해요", text: "장르와 활동 지역별 강사찾기" } },
+  { id: "jobs", kind: "jobs" as const, label: "채용공고", title: "장르와 지역으로\n수업 고르기", description: "필라테스인지 발레인지, 어느 지역인지 고르면\n그 조건 공고만 남아요.\n시급·요일·시간·수강 대상 보고 바로 지원.", screen: "detail" as const, note: { title: "지원 전에 조건부터", text: "급여, 근무 요일과 시간, 수강 대상" } },
+  { id: "substitute", kind: "substitute" as const, label: "대타 구하기", title: "갑자기 빈 수업,\n대타 선생님 찾을 땐", description: "대타구해요에 날짜·시간·시급만 적어 올리면\n그 시간에 되는 강사가 보고 지원해요.\n시간 비는 날, 하루짜리 수업도 여기서.", detail: "공고 등록도 지원도 무료, 앱에서 간편하게", screen: "substitute" as const, note: { title: "대타구해요", text: "날짜, 시간, 시급을 보고 지원" } },
+  { id: "talent", kind: "talent" as const, label: "강사 프로필", title: "프로필 올려 두면\n센터가 보고 연락", description: "해 온 수업, 경력, 전문 장르를 프로필에.\n센터는 강사찾기에서 장르·활동 지역별로\n프로필을 보고 제안해요.", detail: "강사 구하는 센터라면 강사찾기부터", screen: "talent" as const, note: { title: "강사찾기", text: "장르와 활동 지역이 보이는 프로필 카드" } },
+];
+
+// 장르별 섹션. 해당 장르 강사가 자기 이야기로 읽을 수 있는 수업 상황을 적습니다.
+export const GENRES = [
+  { name: "댄스", hook: "저녁·주말 타임이 비어 있다면", detail: "키즈 방송댄스, 성인 K-POP, 방과후 수업. 시간대 맞는 공고만 골라 지원." },
+  { name: "발레", hook: "한 타임만 비어도 대타가 급할 때", detail: "성인 취미발레 주말반, 유아 발레. 하루 비는 날도 대타구해요에 한 번만." },
+  { name: "필라테스", hook: "센터 여러 곳을 오가는 프리랜서라면", detail: "기구·매트 그룹 레슨, 오전·저녁 타임. 동선에 맞는 지역 공고만 모아 보기." },
+  { name: "요가", hook: "정규 수업 하나 더 늘리고 싶을 때", detail: "아침 빈야사, 저녁 하타. 요일과 시간이 맞는 정규 수업 찾기." },
+  { name: "피트니스", hook: "GX 타임, PT 자리를 찾는다면", detail: "그룹 GX, 퍼스널 트레이닝. 시급과 근무 시간 보고 바로 지원." },
 ];

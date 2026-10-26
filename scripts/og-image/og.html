@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>freenable 공유 미리보기</title>
+<!-- 링크 공유 미리보기 1200x630. render.sh가 app/opengraph-image.png, app/twitter-image.png로 캡처합니다.
+     문구를 바꾸면 app/*-image.alt.txt도 같이 고칩니다. -->
+<style>
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2');font-weight:700}
+
+:root{--ink:#191F28; --sub:#4E4A46; --sand:#F3E9DF; --warm:#966044; --accent:#C48A6A; --paper:#FBFAF8}
+*{box-sizing:border-box;word-break:keep-all}
+html,body{margin:0;padding:0}
+body{position:relative;overflow:hidden;width:1200px;height:630px;font-family:Spoqa,sans-serif;color:var(--ink);background:var(--sand);-webkit-font-smoothing:antialiased}
+body::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:var(--accent)}
+
+.copy{position:absolute;left:96px;top:150px}
+.kicker{margin:0 0 22px;font-size:28px;color:var(--sub);letter-spacing:-.02em}
+h1{margin:0;font-size:70px;line-height:1.28;font-weight:700;letter-spacing:-.05em}
+h1 .hl{color:var(--warm)}
+.fields{margin:30px 0 0;font-size:24px;color:var(--sub);letter-spacing:-.01em}
+
+/* 워드마크는 앱 BRAND_ASSETS 기준(Spoqa Han Sans Neo Medium, #000)대로 글자로 그립니다 */
+.tile{position:absolute;right:110px;top:190px;width:250px;height:250px;border-radius:56px;background:var(--paper);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 30px 60px #603C201F,0 8px 20px #603C2014}
+.tile span{font-size:46px;font-weight:500;color:#000;letter-spacing:-.01em}
+</style>
+</head>
+<body>
+<div class="copy">
+  <p class="kicker">예체능 프리랜서 강사 구인구직 플랫폼</p>
+  <h1>수업도 대타도<br><span class="hl">프리너블</span>에서 구해요</h1>
+  <p class="fields">댄스 · 발레 · 필라테스 · 요가 · 피트니스</p>
+</div>
+<div class="tile"><span>freenable</span></div>
+</body>
+</html>

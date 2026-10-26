@@ -43,7 +43,7 @@ export function FeatureTour() {
               <div className="tour-copy">
                 <h2 id={`${feature.id}-title`}>{feature.title}</h2>
                 <p>{feature.description}</p>
-                <p className="tour-detail">{feature.detail}</p>
+                {feature.detail && <p className="tour-detail">{feature.detail}</p>}
               </div>
               <figure className="tour-inline">
                 <AppScreen kind={feature.screen} />

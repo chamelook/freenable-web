@@ -1,6 +1,6 @@
 # freenable Web
 
-예체능 프리랜서 구인구직 플랫폼 freenable의 Next.js 웹사이트입니다.
+예체능 프리랜서 강사 구인구직 플랫폼 freenable의 Next.js 웹사이트입니다.
 
 ## 기술 구성
 
