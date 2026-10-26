@@ -44,8 +44,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko">
-      <body className={spoqa.variable}>
+    <html lang="ko" className={spoqa.variable}>
+      <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA).replace(/</g, "\\u003c") }} />
         {children}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${SITE.gaMeasurementId}`} strategy="afterInteractive" />

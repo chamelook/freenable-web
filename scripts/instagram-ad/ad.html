@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>freenable 인스타그램 광고</title>
-<!-- 릴스·스토리 광고 1080x1920. 위 270px, 아래 670px은 인스타그램 UI가 덮으므로 핵심 문구를 두지 않습니다. ?guide=1로 안전 영역 표시 -->
+<!-- 릴스·스토리 광고 1080x1920. 위 270px, 아래 670px은 인스타그램 UI가 덮으므로 핵심 문구를 두지 않습니다. ?guide=1로 안전 영역 표시
+     영상은 record.mjs가 window.__setT(초)로 프레임마다 장면을 맞춰 캡처합니다. 마지막 장면은 정지 이미지와 같습니다. -->
 <style>
 @font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
 @font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
@@ -11,7 +12,7 @@
 
 :root{
   --ink:#191F28; --sub:#68605A; --muted:#74716E;
-  --sand:#F3E9DF; --sand-light:#F8F2EB; --warm:#966044; --accent:#C48A6A;
+  --sand:#F3E9DF; --sand-light:#F8F2EB; --sand-deep:#E8D5C0; --warm:#966044; --accent:#C48A6A;
 }
 *{box-sizing:border-box;word-break:keep-all}
 html,body{margin:0;padding:0}
@@ -24,23 +25,26 @@ body{position:relative;overflow:hidden;width:1080px;height:1920px;font-family:Sp
 
 .copy{position:absolute;left:80px;right:80px;top:400px}
 h1{margin:0 0 34px;font-size:92px;line-height:1.3;font-weight:700;letter-spacing:-.06em}
-h1 span{color:var(--warm)}
+h1 .line{display:block}
+h1 .hl{color:var(--warm)}
 .sub{margin:0;font-size:44px;line-height:1.6;color:var(--sub);letter-spacing:-.04em}
-.sub b{color:var(--ink);font-weight:700}
+.sub b{display:inline-block;color:var(--ink);font-weight:700}
 
-.chips{position:absolute;left:80px;top:850px;display:flex;gap:12px}
+.chips{position:absolute;left:80px;top:790px;display:flex;gap:12px}
+.chips .chip{display:inline-block}
 .chip{padding:12px 22px;border-radius:40px;background:#FBFAF8;font-size:26px;font-weight:500;color:var(--ink-soft,#353A41);letter-spacing:-.02em}
 
-.phone{position:absolute;left:470px;top:960px;width:520px;padding:14px;border-radius:78px;background:#1C1B19;
-  box-shadow:0 0 0 2.5px #3A3733 inset,0 50px 90px #603C2033,0 14px 32px #603C201F;transform:rotate(6deg);transform-origin:center top}
-.phone img{display:block;width:100%;height:auto;border-radius:64px}
+.phone{position:absolute;left:220px;top:900px;width:640px;padding:16px;border-radius:94px;background:#1C1B19;
+  box-shadow:0 0 0 2.5px #3A3733 inset,0 50px 90px #603C2033,0 14px 32px #603C201F}
+/* 앱 화면을 머리(상태바·제목·필터)와 목록으로 나눠, 영상에서 새 공고가 목록 맨 위로 들어오게 합니다. 이미지 300px 지점이 첫 공고 시작 */
+.screen{position:relative;width:608px;height:1316px;border-radius:78px;overflow:hidden;background:#FAF9F6}
+.screen img{display:block;width:608px;height:auto}
+.screen-head{position:absolute;left:0;right:0;top:0;height:234px;overflow:hidden;z-index:2;background:#FAF9F6}
+.screen-list{position:absolute;left:0;right:0;top:234px;bottom:0;overflow:hidden}
+.list-track{position:relative;margin-top:-234px}
+.new-tint{position:absolute;left:0;right:0;top:234px;height:187px;background:var(--sand-deep);mix-blend-mode:multiply;opacity:0}
 
-.note{position:absolute;left:80px;top:1078px;z-index:2;display:flex;align-items:center;gap:24px;padding:30px 36px;border-radius:30px;background:#fff;box-shadow:0 20px 50px #53402B1F}
-.note-icon{display:grid;place-items:center;width:64px;height:64px;border-radius:20px;background:var(--sand);color:var(--warm);font-size:34px}
-.note strong{display:block;font-size:30px;font-weight:700;letter-spacing:-.03em}
-.note p{margin:8px 0 0;font-size:24px;color:var(--muted)}
-
-.disclaimer{position:absolute;left:84px;top:1220px;margin:0;font-size:20px;color:var(--muted)}
+.disclaimer{position:absolute;right:80px;top:808px;margin:0;font-size:20px;color:var(--muted)}
 
 .guide{display:none;position:absolute;left:0;right:0;background:#ff000033;z-index:9}
 body.show-guide .guide{display:block}
@@ -53,24 +57,45 @@ body.show-guide .guide{display:block}
 </div>
 
 <div class="copy">
-  <h1>갑자기 빈 수업,<br><span>대타 선생님</span> 찾을 땐</h1>
-  <p class="sub">공고 등록도 지원도 <b>무료</b>, 앱에서 간편하게</p>
+  <h1><span class="line">갑자기 빈 수업,</span><span class="line"><span class="hl">대타 선생님</span> 찾을 땐</span></h1>
+  <p class="sub"><span class="sub-a">공고 등록도 지원도 </span><b>무료</b><span class="sub-c">, 앱에서 간편하게</span></p>
 </div>
 
 <div class="chips">
   <span class="chip">댄스</span><span class="chip">발레</span><span class="chip">필라테스</span><span class="chip">요가</span><span class="chip">피트니스</span>
 </div>
 
-<div class="phone"><img src="../../public/images/app-screens/substitute.png" alt=""></div>
+<div class="phone"><div class="screen">
+  <div class="screen-head"><img src="../../public/images/app-screens/substitute.png" alt=""></div>
+  <div class="screen-list"><div class="list-track"><img src="../../public/images/app-screens/substitute.png" alt=""><span class="new-tint"></span></div></div>
+</div></div>
 
-<div class="note">
-  <span class="note-icon" aria-hidden="true">▦</span>
-  <div><strong>가능한 시간에, 새로운 수업</strong><p>날짜 · 지역 · 분야로 연결해요</p></div>
-</div>
 <p class="disclaimer">* 앱 화면은 예시입니다</p>
 
 <div class="guide" style="top:0;height:270px"></div>
 <div class="guide" style="bottom:0;height:670px"></div>
-<script>if(new URLSearchParams(location.search).has('guide'))document.body.classList.add('show-guide')</script>
+<script>
+if(new URLSearchParams(location.search).has('guide'))document.body.classList.add('show-guide');
+
+// 영상 타임라인(초). 8초 중 마지막 약 2.5초는 정지 장면으로 읽을 시간을 둡니다.
+const ease=x=>1-Math.pow(1-x,3);
+const at=(t,a,b)=>ease(Math.min(1,Math.max(0,(t-a)/(b-a))));
+const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
+const show=(el,k,dy=0,scale=1)=>{el.style.opacity=k;el.style.transform=`translateY(${(1-k)*dy}px) scale(${scale+(1-scale)*k})`};
+window.__setT=t=>{
+  show($('.top'),at(t,0,.5));
+  const [l1,l2]=$$('h1 .line');
+  show(l1,at(t,.1,.7),40); show(l2,at(t,.35,.95),40);
+  $('.phone').style.transform=`translateY(${(1-at(t,1,2))*1040}px)`;
+  show($('.sub-a'),at(t,2,2.6),24);
+  show($('.sub b'),at(t,2.5,2.9),0,.7);
+  show($('.sub-c'),at(t,2.8,3.3),24);
+  $$('.chip').forEach((c,i)=>show(c,at(t,3.2+i*.1,3.7+i*.1),20));
+  show($('.disclaimer'),at(t,3.6,4.1));
+  $('.list-track').style.transform=`translateY(${-(1-at(t,4.2,5))*187}px)`;
+  $('.new-tint').style.opacity=.5*at(t,4.9,5.3)*(1-at(t,6,6.8));
+};
+Promise.all([document.fonts.ready,...$$('img').map(i=>i.decode())]).then(()=>{window.__ready=true});
+</script>
 </body>
 </html>
