@@ -99,7 +99,17 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
 .statement { padding-block: var(--section-gap) var(--section-gap-s); }
 .statement-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-xl); }
 .landing .statement h2 { grid-column: 1 / span 10; font-size: var(--text-display-s); }
+.landing .statement h2 em { color: var(--color-accent-text); font-style: normal; }
 .statement-line { grid-column: 7 / span 6; color: var(--color-muted); font-size: var(--text-lead); line-height: 1.7; }
+
+/* Landing: genres */
+.genres { padding-block: var(--section-gap-s); }
+.genres-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-xl); }
+.genres h2 { grid-column: 1 / span 4; align-self: start; }
+.genre-list { grid-column: 6 / span 7; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--color-rule); }
+.genre-list li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 5fr); column-gap: var(--gap-columns); row-gap: var(--space-2xs); padding-block: var(--space-lg); border-top: 1px solid var(--color-rule); }
+.genre-name { color: var(--color-accent-text); font-size: var(--text-title); font-weight: 700; letter-spacing: var(--tracking-display); line-height: 1.35; }
+.genre-list p { margin-top: var(--space-2xs); color: var(--color-muted); }
 
 /* Landing: feature tour */
 .tour { padding-block: var(--section-gap-s) var(--section-gap); }
@@ -171,6 +181,8 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
   .hero-figure { justify-self: center; }
   .hero-shot { height: 520px; }
   .landing .statement h2, .statement-line { grid-column: 1 / -1; }
+  .genres h2, .genre-list { grid-column: 1 / -1; }
+  .genre-list li { grid-template-columns: minmax(0, 1fr); }
   .tour-panel { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-xl); }
   .tour-copy, .tour-inline { grid-column: 1 / -1; }
   .app-copy, .app-figure, .footer-brand, .footer-links { grid-column: 1 / -1; }

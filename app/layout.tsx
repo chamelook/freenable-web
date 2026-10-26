@@ -19,10 +19,10 @@ const spoqa = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "프리너블(freenable) | 예체능 강사 구인구직·대타 앱",
+    default: "프리너블(freenable) | 예체능 프리랜서 강사 구인구직 플랫폼",
     template: "%s | freenable",
   },
-  description: "댄스·발레·필라테스·요가·피트니스 강사와 학원·센터를 연결하는 예체능 프리랜서 구인구직·대타 앱, 프리너블(freenable)입니다.",
+  description: "예체능 프리랜서 강사 구인구직 플랫폼 프리너블(freenable). 댄스·발레·필라테스·요가·피트니스 강사는 수업을 찾고, 학원·센터는 강사와 대타를 구해요. 공고 등록과 지원은 무료예요.",
   alternates: { canonical: "/" },
   verification: {
     other: { "naver-site-verification": "33c1ed7be14518f3143617830dc991953bbf67eb" },
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     siteName: "프리너블",
-    title: "프리너블(freenable) | 예체능 강사 구인구직·대타 앱",
-    description: "채용부터 긴급 대타까지, 예체능 일을 더 빠르게 연결합니다.",
+    title: "프리너블(freenable) | 예체능 프리랜서 강사 구인구직 플랫폼",
+    description: "댄스·발레·필라테스·요가·피트니스 강사 공고와 대타 공고를 한 앱에서. 공고 등록도 지원도 무료.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "프리너블(freenable) | 예체능 강사 구인구직·대타 앱",
-    description: "채용부터 긴급 대타까지, 예체능 일을 더 빠르게 연결합니다.",
+    title: "프리너블(freenable) | 예체능 프리랜서 강사 구인구직 플랫폼",
+    description: "댄스·발레·필라테스·요가·피트니스 강사 공고와 대타 공고를 한 앱에서. 공고 등록도 지원도 무료.",
   },
 };
 
