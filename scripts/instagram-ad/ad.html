@@ -12,7 +12,7 @@
 
 :root{
   --ink:#191F28; --sub:#68605A; --muted:#74716E;
-  --sand:#F3E9DF; --sand-light:#F8F2EB; --sand-deep:#E8D5C0; --warm:#966044; --accent:#C48A6A;
+  --sand:#F3E9DF; --sand-light:#F8F2EB; --sand-deep:#E8D5C0; --logo:#000; --warm:#966044; --accent:#C48A6A;
 }
 *{box-sizing:border-box;word-break:keep-all}
 html,body{margin:0;padding:0}
@@ -20,7 +20,8 @@ body{position:relative;overflow:hidden;width:1080px;height:1920px;font-family:Sp
   background:radial-gradient(ellipse 760px 900px at 720px 1300px,var(--sand-light) 0%,var(--sand) 70%)}
 
 .top{position:absolute;left:80px;right:80px;top:290px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:block;width:200px;height:auto;mix-blend-mode:multiply}
+/* 워드마크는 앱 BRAND_ASSETS 기준(Spoqa Han Sans Neo Medium, #000)대로 글자로 그려 237px PNG를 키울 때의 흐림을 피합니다 */
+.logo{font-size:44px;font-weight:500;line-height:1;color:var(--logo)}
 .store{font-size:24px;font-weight:500;color:var(--muted);letter-spacing:-.02em}
 
 .copy{position:absolute;left:80px;right:80px;top:400px}
@@ -38,10 +39,11 @@ h1 .hl{color:var(--warm)}
   box-shadow:0 0 0 2.5px #3A3733 inset,0 50px 90px #603C2033,0 14px 32px #603C201F}
 /* 앱 화면을 머리(상태바·제목·필터)와 목록으로 나눠, 영상에서 새 공고가 목록 맨 위로 들어오게 합니다. 이미지 300px 지점이 첫 공고 시작 */
 .screen{position:relative;width:608px;height:1316px;border-radius:78px;overflow:hidden;background:#FAF9F6}
-.screen img{display:block;width:608px;height:auto}
+/* 앱 화면은 PNG 대신 원본 HTML(app-screens/screens.html)을 390px 논리 크기로 띄워 608px로 확대합니다. 글자가 벡터로 그려져 선명합니다 */
+.screen iframe{display:block;width:390px;height:844px;border:0;transform:scale(1.55897);transform-origin:0 0}
 .screen-head{position:absolute;left:0;right:0;top:0;height:234px;overflow:hidden;z-index:2;background:#FAF9F6}
 .screen-list{position:absolute;left:0;right:0;top:234px;bottom:0;overflow:hidden}
-.list-track{position:relative;margin-top:-234px}
+.list-track{position:relative;height:1316px;margin-top:-234px}
 .new-tint{position:absolute;left:0;right:0;top:234px;height:187px;background:var(--sand-deep);mix-blend-mode:multiply;opacity:0}
 
 .disclaimer{position:absolute;right:80px;top:808px;margin:0;font-size:20px;color:var(--muted)}
@@ -52,7 +54,7 @@ body.show-guide .guide{display:block}
 </head>
 <body>
 <div class="top">
-  <img class="logo" src="../../public/images/freenable-logo.png" alt="freenable">
+  <span class="logo">freenable</span>
   <span class="store">App Store · Google Play</span>
 </div>
 
@@ -66,8 +68,8 @@ body.show-guide .guide{display:block}
 </div>
 
 <div class="phone"><div class="screen">
-  <div class="screen-head"><img src="../../public/images/app-screens/substitute.png" alt=""></div>
-  <div class="screen-list"><div class="list-track"><img src="../../public/images/app-screens/substitute.png" alt=""><span class="new-tint"></span></div></div>
+  <div class="screen-head"><iframe src="../app-screens/screens.html?s=substitute" title="" tabindex="-1" aria-hidden="true"></iframe></div>
+  <div class="screen-list"><div class="list-track"><iframe src="../app-screens/screens.html?s=substitute" title="" tabindex="-1" aria-hidden="true"></iframe><span class="new-tint"></span></div></div>
 </div></div>
 
 <p class="disclaimer">* 앱 화면은 예시입니다</p>
@@ -95,7 +97,9 @@ window.__setT=t=>{
   $('.list-track').style.transform=`translateY(${-(1-at(t,4.2,5))*187}px)`;
   $('.new-tint').style.opacity=.5*at(t,4.9,5.3)*(1-at(t,6,6.8));
 };
-Promise.all([document.fonts.ready,...$$('img').map(i=>i.decode())]).then(()=>{window.__ready=true});
+// 앱 화면 iframe은 자체 글꼴을 받은 뒤 .screen을 붙이므로, 그 요소가 생길 때까지 기다립니다
+const screenDrawn=f=>new Promise(r=>{const tick=()=>f.contentDocument?.querySelector('.screen')?r():setTimeout(tick,50);tick()});
+Promise.all([document.fonts.ready,...$$('.screen iframe').map(screenDrawn)]).then(()=>{window.__ready=true});
 </script>
 </body>
 </html>
