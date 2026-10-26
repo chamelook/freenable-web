@@ -20,7 +20,6 @@ export default function Home() {
               <h1 id="hero-title">수업도 대타도<br />프리너블에서 구해요</h1>
               <p className="lead hero-lead">예체능 프리랜서 강사 구인구직 플랫폼</p>
               <AppDownloadLinks />
-              <a href="#about" className="hero-explore">어떻게 쓰는지 보기</a>
             </div>
             <figure className="hero-figure">
               <AppScreen kind="jobs" className="hero-shot" eager />
@@ -45,6 +44,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <p className="genre-note">다른 장르도 추가할 예정이에요.</p>
           </div>
         </section>
         <FeatureTour />
