@@ -9,7 +9,7 @@ export const APP_SCREENS: Record<AppScreenKind, string> = {
 };
 
 export const FEATURES = [
-  { id: "jobs", kind: "jobs" as const, label: "채용공고", title: "내게 맞는 수업을,\n한눈에", description: "여기저기 흩어진 수업 일자리.\n분야와 지역, 수업 조건을 살펴보고\n나에게 맞는 기회를 찾아보세요.", detail: "댄스, 발레, 필라테스, 요가, 피트니스" },
-  { id: "substitute", kind: "substitute" as const, label: "대타 연결", title: "빈 수업과 빈 시간의\n반가운 만남", description: "갑자기 수업을 맡길 선생님이 필요할 때,\n새로운 수업을 맡을 여유가 생겼을 때.\n날짜와 지역, 분야를 확인하고 연결해요.", detail: "공고 등록부터 지원까지, 앱에서 간편하게" },
-  { id: "talent", kind: "talent" as const, label: "강사 프로필", title: "나의 경험이\n다음 기회가 되도록", description: "어떤 수업을 해왔는지, 무엇을 잘하는지.\n소개와 경력, 전문 분야를 프로필에 담아\n함께할 센터에 나를 알려보세요.", detail: "가르치는 사람과 공간을 만드는 사람을 연결해요" },
+  { id: "jobs", kind: "jobs" as const, label: "채용공고", title: "내게 맞는 수업을,\n한눈에", description: "여기저기 흩어진 수업 일자리.\n분야와 지역, 수업 조건을 살펴보고\n나에게 맞는 기회를 찾아보세요.", detail: "댄스, 발레, 필라테스, 요가, 피트니스", screen: "detail" as const, note: { title: "나에게 맞는 조건으로", text: "분야, 지역, 수업 일정" } },
+  { id: "substitute", kind: "substitute" as const, label: "대타 연결", title: "빈 수업과 빈 시간의\n반가운 만남", description: "갑자기 수업을 맡길 선생님이 필요할 때,\n새로운 수업을 맡을 여유가 생겼을 때.\n날짜와 지역, 분야를 확인하고 연결해요.", detail: "공고 등록부터 지원까지, 앱에서 간편하게", screen: "substitute" as const, note: { title: "가능한 시간에, 새로운 수업", text: "일정을 확인하고 지원해요" } },
+  { id: "talent", kind: "talent" as const, label: "강사 프로필", title: "나의 경험이\n다음 기회가 되도록", description: "어떤 수업을 해왔는지, 무엇을 잘하는지.\n소개와 경력, 전문 분야를 프로필에 담아\n함께할 센터에 나를 알려보세요.", detail: "가르치는 사람과 공간을 만드는 사람을 연결해요", screen: "talent" as const, note: { title: "센터가 프로필을 보고 제안해요", text: "장르와 활동 지역별 강사찾기" } },
 ];

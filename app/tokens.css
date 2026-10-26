@@ -1,0 +1,26 @@
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
+  --text-display-s: clamp(2rem, 3.2vw + 0.5rem, 3.5rem); --text-display: clamp(2.25rem, 5vw + 0.75rem, 5.25rem);
+  --text-section: clamp(1.75rem, 2.2vw + 0.75rem, 3rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.0625rem, 0.35vw + 0.95rem, 1.3125rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+  --color-paper: #fbfaf8; --color-paper-2: #f3e9df; --color-paper-3: #e8d5c0;
+  --color-ink: #191f28; --color-ink-2: #353a41; --color-muted: #6a6764;
+  --color-rule: #e9e4de;
+  --color-accent: #966044; --color-accent-ink: #fbfaf8; --color-focus: #966044;
+  --color-accent-text: #8a5539; --color-surface: #fffcf8; --color-ink-quiet: #68605a;
+  --color-on-ink: #fbfaf8; --color-on-ink-muted: #c9c4bd; --color-ink-hover: #2a313b; --color-focus-on-ink: #e8d5c0;
+  --color-frame: #191f2817; --color-shadow-nav: #53402b14;
+  --font-display: var(--font-spoqa), "Spoqa Han Sans Neo", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-body: var(--font-spoqa), "Spoqa Han Sans Neo", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-outlier: var(--font-body);
+  --radius-card: 24px; --radius-shot: 28px; --radius-control: 12px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
+  --tracking-display: -0.045em; --display-weight: 700;
+  --nav-height: 64px; --nav-offset: 16px;
+}
+@media (max-width: 60rem) { :root { --gutter: 24px; --section-gap-s: 80px; --section-gap: 96px; --section-gap-l: 120px; --nav-height: 56px; --nav-offset: 12px; } }
+@media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }

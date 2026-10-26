@@ -27,28 +27,30 @@ export function SiteHeader() {
 
   return (
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
-      <div className="header-inner">
-        <Link className="brand" href="/" aria-label="freenable 홈">
-          <BrandLogo priority />
-        </Link>
+      <div className="container">
+        <div className="nav-pill">
+          <Link className="brand" href="/" aria-label="freenable 홈">
+            <BrandLogo priority />
+          </Link>
 
-        <button
-          className="menu-button"
-          type="button"
-          aria-expanded={isOpen}
-          aria-controls="primary-navigation"
-          onClick={() => setIsOpen((open) => !open)}
-        >
-          <span /><span /><span />
-          <span className="sr-only">메뉴 {isOpen ? "닫기" : "열기"}</span>
-        </button>
+          <button
+            className="menu-button"
+            type="button"
+            aria-expanded={isOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            <span /><span /><span />
+            <span className="sr-only">메뉴 {isOpen ? "닫기" : "열기"}</span>
+          </button>
 
-        <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
-          {SITE.navigation.map(item => <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>)}
-        </nav>
+          <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
+            {SITE.navigation.map(item => <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>)}
+          </nav>
 
-        <div className="header-actions">
-          <Link className="button button-dark button-small" href="/#app" onClick={() => setIsOpen(false)}>앱 다운로드</Link>
+          <div className="header-actions">
+            <Link className="nav-action" href="/#app" onClick={() => setIsOpen(false)}>앱 다운로드</Link>
+          </div>
         </div>
       </div>
     </header>

@@ -1,6 +1,36 @@
 [
  {
   "mode": "redesign",
+  "depth": "full",
+  "scope": "page",
+  "shape": "Workbench",
+  "theme": "brand",
+  "axes": "light/grotesk-sans/warm",
+  "hero": "Counter",
+  "nav": "floating pill",
+  "footer": "colophon block",
+  "imagery": "screenshots 4 (render.sh, sample data)",
+  "photos": [],
+  "entry": "/",
+  "sections": [
+   "hero",
+   "statement",
+   "pinned",
+   "band",
+   "footer"
+  ],
+  "signature": "one app screen held still while the three features scroll past and change it",
+  "waived": [
+   "66",
+   "26b",
+   "24b"
+  ],
+  "prompt": "freenable landing: app install for dance and fitness instructors",
+  "draw": "17ef10",
+  "date": "2026-10-26"
+ },
+ {
+  "mode": "redesign",
   "depth": "polish",
   "scope": "page",
   "prompt": "freenable landing: app install for dance and fitness instructors",
