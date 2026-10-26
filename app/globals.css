@@ -3,6 +3,7 @@
  * built: the project · redesign: polish · v2.0.0 */
 /* Hallmark · dropped "가르치는 일이, 더 자유로워지도록" (hero) · 54 names it, the headline already carries the promise */
 /* Hallmark · dropped "수업을 찾는 일부터, 조금 더 편하게" (intro) · 54 names it, the heading under it says the same */
+/* Hallmark · dropped the feature labels "채용공고", "대타 연결", "강사 프로필" above each head · 54 names them; the nav and footer still name each feature */
 /* Hallmark · waive 47b · two frames, list and detail of the real app screens · polish keeps the hero stage as the owner built it */
 /* Hallmark · waive 66 · the explore link (#about) is the hero's only in-page route to the freenable intro · polish keeps every href, so the link stays and only its arrow went */
 /* Hallmark · waive 26b · no control on these pages is a form control or carries aria-disabled · each App Store and Google Play link always opens its store, so no disabled state exists to style */
@@ -99,7 +100,8 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
 .store-link:hover { background: var(--ink-soft); transform: translateY(-2px); }
 .store-link:active { transform: translateY(1px); }
 .hero-explore { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 8px 0; color: var(--ink-soft); font-size: 13px; }
-.hero-explore:hover { text-decoration: underline; text-underline-offset: 4px; }
+.hero-explore { text-decoration: underline; text-decoration-color: var(--sand-deep); text-decoration-thickness: 1px; text-underline-offset: 4px; transition: text-decoration-color .2s; }
+.hero-explore:hover { text-decoration-color: currentColor; }
 .app-inner .app-download-links { justify-content: center; }
 .button-outline { background: var(--paper); border-color: transparent; }
 .button-outline:hover { background: var(--surface); transform: translateY(-2px); }
@@ -114,8 +116,7 @@ h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.5; letter-spacing: -.05
 .feature-band-profile .feature-inner { background: var(--paper-deep); }
 .feature-copy h2 { white-space: pre-line; }
 .feature-copy > p:not(.eyebrow) { white-space: pre-line; color: var(--muted); font-size: 17px; line-height: 1.95; letter-spacing: -.035em; margin-bottom: 30px; }
-.feature-lead { color: var(--warm-text); font-weight: 700; }
-.feature-detail { font-size: 12px; color: var(--warm-text); line-height: 1.8; }
+.feature-detail { font-size: 12px; color: var(--muted); line-height: 1.8; }
 .feature-reverse .feature-copy { grid-column: 2; grid-row: 1; }
 .feature-reverse .preview-stage { grid-column: 1; grid-row: 1; }
 .preview-stage { position: relative; display: flex; justify-content: center; align-items: center; min-width: 0; padding: 12px 0 42px; }
