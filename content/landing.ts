@@ -10,8 +10,8 @@ export const APP_SCREENS: Record<AppScreenKind, string> = {
 
 export const FEATURES = [
   { id: "jobs", kind: "jobs" as const, label: "채용공고", title: "장르와 지역으로\n수업 고르기", description: "필라테스인지 발레인지, 어느 지역인지 고르면\n그 조건 공고만 남아요.\n시급·요일·시간·수강 대상 보고 바로 지원.", screen: "detail" as const, note: { title: "지원 전에 조건부터", text: "급여, 근무 요일과 시간, 수강 대상" } },
-  { id: "substitute", kind: "substitute" as const, label: "대타 구하기", title: "갑자기 빈 수업,\n대타 선생님 찾을 땐", description: "대타구해요에 날짜·시간·시급만 적어 올리면\n그 시간에 되는 강사가 보고 지원해요.\n시간 비는 날, 하루짜리 수업도 여기서.", detail: "공고 등록도 지원도 무료, 앱에서 간편하게", screen: "substitute" as const, note: { title: "대타구해요", text: "날짜, 시간, 시급을 보고 지원" } },
-  { id: "talent", kind: "talent" as const, label: "강사 프로필", title: "프로필 올려 두면\n센터가 보고 연락", description: "해 온 수업, 경력, 전문 장르를 프로필에.\n센터는 강사찾기에서 장르·활동 지역별로\n프로필을 보고 제안해요.", detail: "강사 구하는 센터라면 강사찾기부터", screen: "talent" as const, note: { title: "강사찾기", text: "장르와 활동 지역이 보이는 프로필 카드" } },
+  { id: "substitute", kind: "substitute" as const, label: "대타 구하기", title: "갑자기 빈 수업,\n대타 선생님 찾을 땐", description: "대타구해요에 날짜·시간·시급만 적어 올리면\n그 시간에 가능한 강사가 보고 지원해요.\n시간 비는 날, 하루짜리 수업도 여기서.", detail: "공고 등록도 지원도 무료, 앱에서 간편하게", screen: "substitute" as const, note: { title: "대타구해요", text: "날짜, 시간, 시급을 보고 지원" } },
+  { id: "talent", kind: "talent" as const, label: "강사 프로필", title: "프로필 올려 두면\n센터가 보고 연락", description: "여기저기 이력서 돌리지 않아도 돼요.\n경력이랑 전문 장르, 한 번만 써 두면\n센터에서 레슨을 제안해요.", detail: "강사 구하는 센터라면 강사찾기부터", screen: "talent" as const, note: { title: "강사찾기", text: "장르와 활동 지역이 보이는 프로필 카드" } },
 ];
 
 // 장르별 섹션. 해당 장르 강사가 자기 이야기로 읽을 수 있는 수업 상황을 적습니다.
