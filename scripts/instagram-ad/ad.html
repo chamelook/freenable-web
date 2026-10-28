@@ -120,8 +120,10 @@ window.__setT=t=>{
   $('.list-track').style.transform=`translateY(${-(1-at(t,4.2,5))*parseFloat(getComputedStyle(document.body).getPropertyValue('--shift'))}px)`;
   $('.new-tint').style.opacity=.5*at(t,4.9,5.3)*(1-at(t,6,6.8));
 };
-// 앱 화면 iframe은 자체 글꼴을 받은 뒤 .screen을 붙이므로, 그 요소가 생길 때까지 기다립니다
-const screenDrawn=f=>new Promise(r=>{const tick=()=>f.contentWindow?.location.search===screenQuery&&f.contentDocument.querySelector('.screen')?r():setTimeout(tick,50);tick()});
+// 앱 화면 iframe은 자체 글꼴을 받은 뒤 .screen을 붙이므로, 그 요소가 생길 때까지 기다립니다.
+// 광고에선 하단 탭바와 홈 표시줄을 숨깁니다(원본 screens.html은 사이트 이미지에도 쓰여 그대로 둡니다)
+const hideChrome=d=>{const st=d.createElement('style');st.textContent='.bn,.homebar{display:none}';d.head.append(st)};
+const screenDrawn=f=>new Promise(r=>{const tick=()=>f.contentWindow?.location.search===screenQuery&&f.contentDocument.querySelector('.screen')?(hideChrome(f.contentDocument),r()):setTimeout(tick,50);tick()});
 Promise.all([document.fonts.ready,...$$('.screen iframe').map(screenDrawn)]).then(()=>{window.__ready=true});
 </script>
 </body>
