@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ad.html → scripts/instagram-ad/out/*.png (1080x1920 릴스·스토리 광고 강사용·센터용, 안전 영역 표시본 포함)
+# ad.html → scripts/instagram-ad/out/*.png (강사용·센터용: 1080x1920 릴스·스토리와 안전 영역 표시본, 1080x1350 피드)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
@@ -19,7 +19,7 @@ sleep 1
 
 render() {
   "$CHROME" --headless=new --user-data-dir="$PROFILE" --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
-    --window-size=1080,1920 --virtual-time-budget=10000 \
+    --window-size=1080,${3:-1920} --virtual-time-budget=10000 \
     --screenshot="$OUT/$1.png" \
     "http://127.0.0.1:$PORT/scripts/instagram-ad/ad.html$2" >/dev/null 2>&1
   echo "$1: $(sips -g pixelWidth -g pixelHeight "$OUT/$1.png" | awk '/pixel/{printf "%s ", $2}')$(du -k "$OUT/$1.png" | cut -f1)KB"
@@ -29,3 +29,5 @@ render substitute-1080x1920 ""
 render substitute-1080x1920-guide "?guide=1"
 render center-1080x1920 "?v=center"
 render center-1080x1920-guide "?v=center&guide=1"
+render substitute-1080x1350 "?f=feed" 1350
+render center-1080x1350 "?v=center&f=feed" 1350

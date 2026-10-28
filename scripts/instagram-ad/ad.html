@@ -5,7 +5,8 @@
 <title>freenable 인스타그램 광고</title>
 <!-- 릴스·스토리 광고 1080x1920. 위 270px, 아래 670px은 인스타그램 UI가 덮으므로 핵심 문구를 두지 않습니다. ?guide=1로 안전 영역 표시
      영상은 record.mjs가 window.__setT(초)로 프레임마다 장면을 맞춰 캡처합니다. 마지막 장면은 정지 이미지와 같습니다.
-     기본은 강사용(대타구해요 화면). ?v=center는 센터용(채용정보 화면)으로 문구와 앱 화면을 바꿉니다. -->
+     기본은 강사용(대타구해요 화면). ?v=center는 센터용(채용정보 화면)으로 문구와 앱 화면을 바꿉니다.
+     ?f=feed는 피드 게시물용 4:5(1080x1350)입니다. 피드는 위아래를 덮는 UI가 없어 내용을 위로 올립니다. -->
 <style>
 @font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
 @font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
@@ -55,6 +56,14 @@ h1 .hl{color:var(--warm)}
 
 .disclaimer{position:absolute;right:80px;top:808px;margin:0;font-size:20px;color:var(--muted)}
 
+/* 피드 4:5: 프로필 격자(3:4)에서 좌우가 약 34px씩 잘리므로 좌우 80px 여백은 그대로 둡니다 */
+body.feed{height:1350px;background:radial-gradient(ellipse 760px 700px at 720px 980px,var(--sand-light) 0%,var(--sand) 70%)}
+body.feed .top{top:84px}
+body.feed .copy{top:180px}
+body.feed .chips{top:568px}
+body.feed .disclaimer{top:586px}
+body.feed .phone{top:680px}
+
 .guide{display:none;position:absolute;left:0;right:0;background:#ff000033;z-index:9}
 body.show-guide .guide{display:block}
 </style>
@@ -86,6 +95,7 @@ body.show-guide .guide{display:block}
 <script>
 const Q=new URLSearchParams(location.search);
 if(Q.has('guide'))document.body.classList.add('show-guide');
+if(Q.get('f')==='feed')document.body.classList.add('feed');
 
 // 센터용: 공고 등록을 권하고, 강사들이 공고를 훑어보는 채용정보 화면으로 '내 공고가 올라갈 곳'을 보여줍니다
 const VARIANTS={
