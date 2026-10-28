@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ad.html → scripts/instagram-ad/out/*.png (1080x1920 릴스·스토리 광고, 안전 영역 표시본 포함)
+# ad.html → scripts/instagram-ad/out/*.png (1080x1920 릴스·스토리 광고 강사용·센터용, 안전 영역 표시본 포함)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
@@ -27,3 +27,5 @@ render() {
 
 render substitute-1080x1920 ""
 render substitute-1080x1920-guide "?guide=1"
+render center-1080x1920 "?v=center"
+render center-1080x1920-guide "?v=center&guide=1"
