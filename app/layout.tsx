@@ -19,7 +19,7 @@ const spoqa = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "프리너블(freenable) | 예체능 프리랜서 강사 구인구직 플랫폼",
+    default: "프리너블: 예체능 프리랜서 강사 구인구직 플랫폼",
     template: "%s | freenable",
   },
   description: "예체능 프리랜서 강사 구인구직 플랫폼 프리너블(freenable). 댄스·발레·필라테스·요가·피트니스 강사는 수업을 찾고, 학원·센터는 강사와 대타를 구해요. 공고 등록과 지원은 무료예요.",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     siteName: "프리너블",
-    title: "프리너블(freenable) | 예체능 프리랜서 강사 구인구직 플랫폼",
+    title: "프리너블: 예체능 프리랜서 강사 구인구직 플랫폼",
     description: "댄스·발레·필라테스·요가·피트니스 강사 공고와 대타 공고를 한 앱에서. 공고 등록도 지원도 무료.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "프리너블(freenable) | 예체능 프리랜서 강사 구인구직 플랫폼",
+    title: "프리너블: 예체능 프리랜서 강사 구인구직 플랫폼",
     description: "댄스·발레·필라테스·요가·피트니스 강사 공고와 대타 공고를 한 앱에서. 공고 등록도 지원도 무료.",
   },
 };
