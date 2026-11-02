@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>freenable 원장님용 광고 시안</title>
+<!-- 원장님용 광고 콘셉트 비교 시안(피드 4:5, 1080x1350).
+     1차: ?c=a 상황형, ?c=b 대비형, ?c=c 한 방형
+     2차(Meta 광고 라이브러리 레퍼런스 기반): ?c=d1 숨고식 체크리스트, ?c=d2&cat=필라테스 센터 숨고식 업종별, ?c=d3 알바몬식 질문+배지, ?c=d4 숨고식 이미지 공식
+     3차: ?c=d12 체크리스트(D1)에 대상 업종 칩(D2)을 합친 안. &f=story는 스토리·릴스 9:16(1080x1920), 위 270px·아래 670px 가림 영역 밖에 모두 둡니다 -->
+<style>
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2');font-weight:700}
+
+:root{
+  --ink:#191F28; --paper:#FBFAF8; --white:#FFFFFF; --sub:#4E4A46; --muted:#6E665F; --store:#74716E; --logo:#000;
+  --sand:#F3E9DF; --sand-light:#F8F2EB; --line:#191F2814; --strike:#A69C93;
+  --orange:#E8620E; --orange-tint:#E8620E14;
+  --shadow-far:#603C201A; --shadow-near:#603C2012;
+}
+*{box-sizing:border-box;word-break:keep-all}
+html,body{margin:0;padding:0}
+body{position:relative;overflow:hidden;width:1080px;height:1350px;font-family:Spoqa,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;
+  background:radial-gradient(ellipse 760px 700px at 720px 980px,var(--sand-light) 0%,var(--sand) 70%)}
+.concept{display:none}
+body[data-c="a"] .ca, body[data-c="b"] .cb, body[data-c="c"] .cc,
+body[data-c="d1"] .cd1, body[data-c="d2"] .cd1, body[data-c="d12"] .cd1, body[data-c="d3"] .cd3, body[data-c="d4"] .cd4{display:block}
+
+.abs{position:absolute;left:80px;right:80px;margin:0}
+.top{position:absolute;left:80px;right:80px;top:84px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:44px;font-weight:500;line-height:1;color:var(--logo)}
+.store{font-size:24px;font-weight:500;color:var(--store);letter-spacing:-.02em}
+h1.abs{font-size:80px;line-height:1.26;font-weight:700;letter-spacing:-.04em}
+h1 span{display:block}
+h1 em{font-style:normal;color:var(--orange)}
+.note{font-size:20px;color:var(--muted)}
+
+/* 공통 아이콘 */
+.chk{flex:none;width:64px;height:64px}
+.chk circle{fill:var(--orange)}
+.chk path{fill:none;stroke:var(--white);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+
+/* 실제 공고 카드 */
+.pcard{position:relative;overflow:hidden;background:var(--white);border-radius:36px;box-shadow:0 22px 48px var(--shadow-far),0 4px 12px var(--shadow-near)}
+.pcard iframe{position:absolute;left:0;top:0;width:390px;height:844px;border:0;transform-origin:0 0;pointer-events:none}
+
+/* A. 상황형 */
+.ca h1{top:196px}
+.ca .answer{top:420px;font-size:64px;font-weight:700;letter-spacing:-.04em;color:var(--orange)}
+.ca .card{top:600px}
+.ca .note{top:900px}
+
+/* B. 대비형 */
+.cb h1{top:196px}
+.cb ul{top:470px;list-style:none;padding:0}
+.cb li{display:flex;align-items:center;justify-content:space-between;height:150px;border-bottom:2px solid var(--line);font-size:60px;font-weight:500;letter-spacing:-.04em;color:var(--strike)}
+.cb li s{text-decoration-thickness:5px;text-decoration-color:var(--strike)}
+.cb li.win{margin-top:24px;border:0;height:180px;padding:0 44px;border-radius:36px;background:var(--orange);color:var(--white);font-weight:700}
+.cb li.win svg{width:70px;height:70px}
+.cb li.win path{fill:none;stroke:var(--white);stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+
+/* C. 한 방형 */
+body[data-c="c"]{background:var(--orange)}
+body[data-c="c"] .logo, body[data-c="c"] .store{color:var(--white)}
+.cc h1{top:250px;color:var(--white);font-size:84px}
+.cc .big{top:470px;font-size:400px;line-height:1;font-weight:700;letter-spacing:-.06em;color:var(--white)}
+.cc .tail{top:960px;font-size:56px;line-height:1.35;font-weight:700;letter-spacing:-.04em;color:var(--white)}
+
+/* D1·D2. 숨고식 체크리스트: 원장님이 스스로 해당 항목을 찾게 합니다 */
+.cd1 h1{top:196px;font-size:72px}
+.cd1 ul{top:470px;list-style:none;padding:0}
+.cd1 li{display:flex;align-items:center;gap:30px;height:128px;border-bottom:2px solid var(--line);font-size:46px;font-weight:500;letter-spacing:-.04em;color:var(--sub)}
+.cd1 .bar{top:922px;height:200px;border-radius:36px;background:var(--orange);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:0 52px}
+.cd1 .bar span{font-size:38px;font-weight:500;letter-spacing:-.03em;opacity:.92}
+.cd1 .bar strong{font-size:58px;font-weight:700;letter-spacing:-.045em;margin-top:6px}
+
+/* D12: 헤드라인 아래 대상 업종 칩을 두고 체크리스트·무료 띠를 그만큼 내립니다 */
+.cd1 .kinds{display:none;top:420px;gap:14px}
+body[data-c="d12"] .cd1 .kinds{display:flex}
+.cd1 .kinds span{padding:14px 26px;border-radius:999px;background:var(--white);font-size:30px;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+/* 4:5: 위아래 여백이 고르도록 전체를 조금 내립니다 */
+body[data-c="d12"] .cd1 h1{top:214px}
+body[data-c="d12"] .cd1 .kinds{top:452px}
+body[data-c="d12"] .cd1 ul{top:572px}
+body[data-c="d12"] .cd1 li{height:118px}
+body[data-c="d12"] .cd1 .bar{top:1000px}
+/* 9:16: 270~1250px 안에 질문, 칩, 체크 3개, 무료 띠를 모두 넣습니다 */
+body.story{height:1920px;background:radial-gradient(ellipse 760px 900px at 720px 1300px,var(--sand-light) 0%,var(--sand) 70%)}
+body.story .top{top:290px}
+body.story[data-c="d12"] .cd1 h1{top:380px}
+body.story[data-c="d12"] .cd1 .kinds{top:590px}
+body.story[data-c="d12"] .cd1 ul{top:678px}
+body.story[data-c="d12"] .cd1 li{height:104px}
+body.story[data-c="d12"] .cd1 .bar{top:1018px;height:196px}
+.guide{display:none;position:absolute;left:0;right:0;background:#ff000033;z-index:9}
+body.show-guide .guide{display:block}
+
+/* D3. 알바몬식 질문 + 장점 배지 */
+.cd3 h1{top:196px}
+.cd3 .badges{top:500px;display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.cd3 .badge{display:flex;align-items:center;gap:26px;height:124px;padding:0 48px 0 30px;border-radius:999px;background:var(--white);font-size:46px;font-weight:700;letter-spacing:-.04em;box-shadow:0 14px 32px var(--shadow-far)}
+.cd3 .tail{top:1012px;font-size:58px;font-weight:700;letter-spacing:-.045em}
+.cd3 .tail em{font-style:normal;color:var(--orange)}
+
+/* D4. 숨고식 이미지 공식: 짧은 헤드라인 + 실제 화면 + 하단 버튼 */
+.cd4 h1{top:196px}
+.cd4 .card{top:520px}
+.cd4 .note{top:820px}
+.cd4 .cta{top:1000px;height:150px;border-radius:999px;background:var(--orange);color:var(--white);display:flex;align-items:center;justify-content:space-between;padding:0 24px 0 60px;font-size:50px;font-weight:700;letter-spacing:-.04em}
+.cd4 .cta svg{width:102px;height:102px}
+.cd4 .cta circle{fill:var(--white)}
+.cd4 .cta path{fill:none;stroke:var(--orange);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+<div class="top"><span class="logo">freenable</span><span class="store">App Store · Google Play</span></div>
+
+<section class="concept ca">
+  <h1 class="abs"><span>원장님, 대타 선생님</span><span>급하게 구할 땐</span></h1>
+  <p class="abs answer">프리너블에 무료로 올려요</p>
+  <div class="abs card"><div class="pcard" data-s="substitute"><iframe title="" tabindex="-1" aria-hidden="true"></iframe></div></div>
+  <p class="abs note">* 앱 화면은 예시입니다</p>
+</section>
+
+<section class="concept cb">
+  <h1 class="abs"><span>원장님,</span><span>강사 어디서 구하세요?</span></h1>
+  <ul class="abs">
+    <li><s>단톡방</s></li>
+    <li><s>지인 소개</s></li>
+    <li><s>유료 구인 사이트</s></li>
+    <li class="win"><span>프리너블, 무료로</span><svg viewBox="0 0 70 70" aria-hidden="true"><path d="M14 36l14 14 28-30"/></svg></li>
+  </ul>
+</section>
+
+<section class="concept cc">
+  <h1 class="abs"><span>원장님,</span><span>강사 구인 공고</span></h1>
+  <p class="abs big">무료</p>
+  <p class="abs tail">예체능 강사 구인구직은<br>프리너블에서</p>
+</section>
+
+<section class="concept cd1">
+  <h1 class="abs"><span class="who">원장님,</span><span>혹시 하나라도 해당하세요?</span></h1>
+  <p class="abs kinds"><span>댄스학원</span><span>발레학원</span><span>필라테스 센터</span><span>헬스장</span></p>
+  <ul class="abs">
+    <li><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>단톡방 구인 글이 금방 묻혀요</li>
+    <li><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>지인 소개도 이제 한계예요</li>
+    <li><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>유료 구인 사이트가 부담돼요</li>
+  </ul>
+  <p class="abs bar"><span>예체능 강사 구인 공고, 프리너블에</span><strong>무료로 올려보세요</strong></p>
+</section>
+
+<section class="concept cd3">
+  <h1 class="abs"><span>강사 구할 때,</span><span>아무 데나 올리세요?</span></h1>
+  <div class="abs badges">
+    <span class="badge"><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>예체능 프리랜서 강사 전용</span>
+    <span class="badge"><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>강사 구인 공고 등록 무료</span>
+    <span class="badge"><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>급한 대타 공고도 올릴 수 있어요</span>
+  </div>
+  <p class="abs tail">강사 구인은 <em>프리너블</em>에서</p>
+</section>
+
+<section class="concept cd4">
+  <h1 class="abs"><span>강사 구인 공고,</span><span><em>무료로</em> 올리는 곳</span></h1>
+  <div class="abs card"><div class="pcard" data-s="jobs" data-row=".row:not(.sp)"><iframe title="" tabindex="-1" aria-hidden="true"></iframe></div></div>
+  <p class="abs note">* 앱 화면은 예시입니다</p>
+  <p class="abs cta"><span>프리너블에 공고 올리기</span><svg viewBox="0 0 102 102" aria-hidden="true"><circle cx="51" cy="51" r="51"/><path d="M38 51h26M54 40l11 11-11 11"/></svg></p>
+</section>
+
+<div class="guide" style="top:0;height:270px"></div>
+<div class="guide" style="bottom:0;height:670px"></div>
+<script>
+const Q=new URLSearchParams(location.search);
+document.body.dataset.c=Q.get('c')||'a';
+if(Q.get('f')==='story')document.body.classList.add('story');
+if(Q.has('guide'))document.body.classList.add('show-guide');
+// D2: 숨고처럼 업종을 콕 짚은 버전
+if(Q.get('c')==='d2')document.querySelector('.cd1 .who').textContent=(Q.get('cat')||'필라테스 센터')+' 원장님,';
+// 실제 앱 화면의 공고 행을 잘라 920px 폭으로 키웁니다
+document.querySelectorAll('.concept:not([style]) .pcard').forEach(box=>{
+  if(getComputedStyle(box.closest('.concept')).display==='none')return;
+  const f=box.querySelector('iframe');
+  f.src='../app-screens/screens.html?s='+box.dataset.s;
+  const tick=()=>{
+    const d=f.contentDocument, row=d?.querySelector(box.dataset.row||'.row');
+    if(!row)return setTimeout(tick,50);
+    const st=d.createElement('style');st.textContent='.row{background:#fff!important;border-bottom:0!important}';d.head.append(st);
+    const r=row.getBoundingClientRect(), s=920/r.width;
+    box.style.width='920px';box.style.height=r.height*s+'px';
+    f.style.transform=`translate(${-r.left*s}px,${-r.top*s}px) scale(${s})`;
+  };
+  tick();
+});
+</script>
+</body>
+</html>

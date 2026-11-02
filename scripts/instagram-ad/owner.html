@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>freenable 원장님용 광고</title>
+<!-- 학원·센터 원장님용 광고. 기본은 피드 4:5(1080x1350), ?f=story는 스토리·릴스 9:16(1080x1920)입니다.
+     숨고식 체크리스트: 질문 → 대상 업종 칩 → 원장님이 지금 겪는 불편 3개 → '무료로 올려보세요' 주황 띠.
+     9:16에서는 위 270px, 아래 670px을 인스타그램 UI가 덮으므로 모든 문구를 270~1250px 안에 둡니다. ?guide=1로 표시 -->
+<style>
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2');font-weight:700}
+
+:root{
+  --ink:#191F28; --white:#FFFFFF; --sub:#4E4A46; --store:#74716E; --logo:#000;
+  /* 배경은 강사용·센터용 광고(ad.html)와 같은 샌드 그라데이션입니다 */
+  --sand:#F3E9DF; --sand-light:#F8F2EB; --line:#191F2814;
+  /* 강조 주황: 흰 글자 대비 3.4:1 */
+  --orange:#E8620E;
+  /* 4:5 배치 */
+  --h:1350px; --top-y:84px; --head-y:214px; --kinds-y:452px; --list-y:572px; --row-h:118px; --bar-y:1000px; --bar-h:200px;
+  --bg:radial-gradient(ellipse 760px 700px at 720px 980px,var(--sand-light) 0%,var(--sand) 70%);
+}
+/* 9:16 배치: 질문, 칩, 체크 3개, 무료 띠를 270~1250px 안에 넣습니다 */
+body.story{--h:1920px; --top-y:290px; --head-y:380px; --kinds-y:590px; --list-y:678px; --row-h:104px; --bar-y:1018px; --bar-h:196px;
+  --bg:radial-gradient(ellipse 760px 900px at 720px 1300px,var(--sand-light) 0%,var(--sand) 70%)}
+*{box-sizing:border-box;word-break:keep-all}
+html,body{margin:0;padding:0}
+body{position:relative;overflow:hidden;width:1080px;height:var(--h);font-family:Spoqa,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;background:var(--bg)}
+
+.abs{position:absolute;left:80px;right:80px;margin:0}
+/* 상단 줄: 기존 광고와 같은 워드마크 크기와 스토어 표기 */
+.top{position:absolute;left:80px;right:80px;top:var(--top-y);display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:44px;font-weight:500;line-height:1;color:var(--logo)}
+.store{font-size:24px;font-weight:500;color:var(--store);letter-spacing:-.02em}
+
+h1.abs{top:var(--head-y);font-size:72px;line-height:1.26;font-weight:700;letter-spacing:-.04em}
+h1 span{display:block}
+
+/* 대상 업종 칩: 어떤 원장님께 하는 말인지 먼저 보여줍니다 */
+.kinds{top:var(--kinds-y);display:flex;gap:14px}
+.kinds span{padding:14px 26px;border-radius:999px;background:var(--white);font-size:30px;font-weight:700;letter-spacing:-.03em}
+
+/* 원장님이 스스로 해당 항목을 찾는 체크리스트 */
+.checks{top:var(--list-y);list-style:none;padding:0}
+.checks li{display:flex;align-items:center;gap:30px;height:var(--row-h);border-bottom:2px solid var(--line);font-size:46px;font-weight:500;letter-spacing:-.04em;color:var(--sub)}
+.chk{flex:none;width:64px;height:64px}
+.chk circle{fill:var(--orange)}
+.chk path{fill:none;stroke:var(--white);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+
+/* 결론: 무료 */
+.bar{top:var(--bar-y);height:var(--bar-h);border-radius:36px;background:var(--orange);color:var(--white);display:flex;flex-direction:column;justify-content:center;padding:0 52px}
+.bar span{font-size:38px;font-weight:500;letter-spacing:-.03em;opacity:.92}
+.bar strong{font-size:58px;font-weight:700;letter-spacing:-.045em;margin-top:6px}
+
+.guide{display:none;position:absolute;left:0;right:0;background:#ff000033;z-index:9}
+body.show-guide .guide{display:block}
+</style>
+</head>
+<body>
+<div class="top"><span class="logo">freenable</span><span class="store">App Store · Google Play</span></div>
+
+<h1 class="abs"><span>원장님,</span><span>혹시 하나라도 해당하세요?</span></h1>
+<p class="abs kinds"><span>댄스학원</span><span>발레학원</span><span>필라테스 센터</span><span>헬스장</span></p>
+<ul class="abs checks">
+  <li><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>단톡방 구인 글이 금방 묻혀요</li>
+  <li><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>지인 소개도 이제 한계예요</li>
+  <li><svg class="chk" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32"/><path d="M19 33l9 9 17-19"/></svg>유료 구인 사이트가 부담돼요</li>
+</ul>
+<p class="abs bar"><span>예체능 강사 구인 공고, 프리너블에</span><strong>무료로 올려보세요</strong></p>
+
+<div class="guide" style="top:0;height:270px"></div>
+<div class="guide" style="bottom:0;height:670px"></div>
+<script>
+const Q=new URLSearchParams(location.search);
+if(Q.get('f')==='story')document.body.classList.add('story');
+if(Q.has('guide'))document.body.classList.add('show-guide');
+</script>
+</body>
+</html>
