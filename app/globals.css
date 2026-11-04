@@ -149,24 +149,19 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
   .tour-frame .app-shot { height: min(62svh, 600px); }
 }
 
-/* Landing: 원장님 섹션 (#center) */
-.center { padding-block: var(--section-gap-s); background: var(--color-paper-2); }
-.center-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-2xl); align-items: center; }
-.center-copy { grid-column: 1 / span 7; }
+/* Landing: 원장님 섹션 (#center). 소개 아래 기능 소개(.tour)는 앱 화면을 오른쪽에 둡니다 */
+.center { padding-top: var(--section-gap-s); background: var(--color-paper-2); }
 .landing .center-eyebrow { color: var(--color-accent-text); font-size: var(--text-md); font-weight: 700; }
-.center h2 { margin-top: var(--space-sm); }
+.landing .center-intro h2 { margin-top: var(--space-sm); font-size: var(--text-display-s); }
 .landing .center-count { margin-top: var(--space-lg); display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-ink-2); font-size: var(--text-sm); }
 .center-count strong { color: var(--color-accent-text); font-weight: 700; }
 .center-count-dot { width: 8px; height: 8px; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-accent); }
-.center-points { margin: var(--space-2xl) 0 0; padding: 0; list-style: none; border-bottom: 1px solid var(--color-paper-3); }
-.center-points li { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 5fr); column-gap: var(--gap-columns); row-gap: var(--space-2xs); padding-block: var(--space-lg); border-top: 1px solid var(--color-paper-3); }
-.center-point-name { color: var(--color-accent-text); font-size: var(--text-md); font-weight: 700; line-height: 1.6; }
-.center-points p { margin-top: var(--space-2xs); color: var(--color-ink-quiet); }
 .center .app-download-links { margin-top: var(--space-lg); }
-.center-figure { grid-column: 9 / span 4; margin: 0; display: grid; justify-items: center; gap: var(--space-md); }
-.center-figure .app-shot { height: min(62svh, 600px); }
-.center-figure figcaption { display: grid; gap: var(--space-3xs); color: var(--color-muted); font-size: var(--text-sm); text-align: center; }
-.center-figure figcaption strong { color: var(--color-ink); font-weight: 500; }
+.center .tour-well, .center .tour-inline { background: var(--color-surface); }
+@media (min-width: 60rem) {
+  .tour-screen-right.is-pinned .tour-visual { grid-column: 8 / span 5; }
+  .tour-screen-right.is-pinned .tour-panels { grid-column: 1 / span 6; }
+}
 
 /* Landing: close */
 .app-section { padding-top: var(--section-gap-s); background: var(--color-ink); color: var(--color-on-ink); overflow: clip; }
@@ -220,8 +215,6 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
   .tour-panel { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-xl); }
   .tour-copy, .tour-inline { grid-column: 1 / -1; }
   .app-copy, .app-figure, .footer-brand, .footer-links { grid-column: 1 / -1; }
-  .center-copy, .center-figure { grid-column: 1 / -1; }
-  .center-points li { grid-template-columns: minmax(0, 1fr); }
   .app-copy { padding-bottom: var(--space-2xl); }
 }
 @media (max-width: 40rem) {
@@ -234,7 +227,6 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
   .tour-inline .app-shot { height: 440px; }
   .app-shot-crop .app-shot { height: 360px; }
   .path-link { padding: var(--space-md); }
-  .center-figure .app-shot { height: 440px; }
 }
 @media (prefers-reduced-motion: reduce) {
  html { scroll-behavior: auto; }
