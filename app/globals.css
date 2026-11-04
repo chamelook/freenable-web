@@ -87,9 +87,13 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
 .headline-grid { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: var(--space-2xl); align-items: center; }
 .hero h1 { max-width: 13em; }
 .hero-lead { margin-top: var(--space-lg); color: var(--color-ink-quiet); }
+/* 첫 화면 강사 수: 처음 보자마자 사람이 많은 앱이라고 느끼도록 부제 바로 아래에 둡니다 */
+.landing .member-count { margin-top: var(--space-lg); display: inline-flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm) var(--space-lg); border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-ink-2); font-size: var(--text-lead); }
+.member-count strong { color: var(--color-accent-text); font-weight: 700; }
+.member-count-dot { width: 10px; height: 10px; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-accent); }
 .hero .app-download-links { margin-top: var(--space-2xl); }
 /* 첫 화면: 강사·원장님 갈림길 */
-.path-links { margin-top: var(--space-2xl); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); max-width: 560px; }
+.path-links { margin-top: var(--space-xl); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); max-width: 560px; }
 .path-link { display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-lg); border: 1px solid var(--color-rule); border-radius: var(--radius-card); background: var(--color-surface); color: var(--color-ink); text-decoration: none; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
 .path-link:hover { background: var(--color-paper); }
 .path-link:active { transform: translateY(1px); }
@@ -149,15 +153,9 @@ h1, h2, h3 { text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
   .tour-frame .app-shot { height: min(62svh, 600px); }
 }
 
-/* Landing: 원장님 섹션 (#center). 소개 아래 기능 소개(.tour)는 앱 화면을 오른쪽에 둡니다 */
-.center { padding-top: var(--section-gap-s); background: var(--color-paper-2); }
-.landing .center-eyebrow { color: var(--color-accent-text); font-size: var(--text-md); font-weight: 700; }
-.landing .center-intro h2 { margin-top: var(--space-sm); font-size: var(--text-display-s); }
-.landing .center-count { margin-top: var(--space-lg); display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) var(--space-md); border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-ink-2); font-size: var(--text-sm); }
-.center-count strong { color: var(--color-accent-text); font-weight: 700; }
-.center-count-dot { width: 8px; height: 8px; flex-shrink: 0; border-radius: var(--radius-pill); background: var(--color-accent); }
-.center .app-download-links { margin-top: var(--space-lg); }
-.center .tour-well, .center .tour-inline { background: var(--color-surface); }
+/* Landing: 원장님 섹션 (#center). 강사용 기능 소개와 같은 색이고, 앱 화면만 오른쪽에 둡니다 */
+/* 기능 소개 첫 단계 제목 위의 "강사님이라면 / 원장님이라면" (AudienceIntro) */
+.landing .audience-label { margin: 0 0 var(--space-sm); color: var(--color-accent-text); font-size: var(--text-md); font-weight: 700; line-height: 1.6; }
 @media (min-width: 60rem) {
   .tour-screen-right.is-pinned .tour-visual { grid-column: 8 / span 5; }
   .tour-screen-right.is-pinned .tour-panels { grid-column: 1 / span 6; }

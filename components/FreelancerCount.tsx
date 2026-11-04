@@ -32,11 +32,14 @@ function fetchFreelancerCountLabel(): Promise<string | null> {
   return labelRequest;
 }
 
+// 공개 통계를 읽기 전이나 못 읽었을 때 보여줄 값
+const DEFAULT_FALLBACK = "200+명";
+
 interface FreelancerCountProps {
-  fallback: string;
+  fallback?: string;
 }
 
-export function FreelancerCount({ fallback }: FreelancerCountProps) {
+export function FreelancerCount({ fallback = DEFAULT_FALLBACK }: FreelancerCountProps) {
   const [label, setLabel] = useState(fallback);
 
   useEffect(() => {

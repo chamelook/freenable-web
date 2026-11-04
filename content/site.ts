@@ -4,17 +4,6 @@ export const STORE_PROFILES = {
   googlePlay: "https://play.google.com/store/apps/details?id=com.free119.app",
 };
 
-export interface StoreLinks {
-  appStore: string;
-  googlePlay: string;
-}
-
-// 홈의 원장님 섹션(#center) 설치 버튼. 원장님 쪽 설치를 강사 쪽(website)과 나눠 보도록 캠페인 값만 바꿉니다.
-export const CENTER_STORE_LINKS: StoreLinks = {
-  appStore: `${STORE_PROFILES.appStore}?pt=128918909&ct=website_center&mt=8`,
-  googlePlay: `${STORE_PROFILES.googlePlay}&utm_source=website&utm_medium=cta&utm_campaign=website_center`,
-};
-
 export const SITE = {
   name: "freenable",
   gaMeasurementId: "G-1F0D415CMV",
