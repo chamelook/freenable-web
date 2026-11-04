@@ -6,13 +6,7 @@ import { useEffect, useState } from "react";
 import { SITE } from "@/content/site";
 import { BrandLogo } from "@/components/BrandLogo";
 
-interface SiteHeaderProps {
-  // 원장님 랜딩(/center)처럼 홈 메뉴(강사용 섹션)를 보여주지 않을 페이지에서 false로 둡니다.
-  showNavigation?: boolean;
-  downloadHref?: string;
-}
-
-export function SiteHeader({ showNavigation = true, downloadHref = "/#app" }: SiteHeaderProps) {
+export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -39,27 +33,23 @@ export function SiteHeader({ showNavigation = true, downloadHref = "/#app" }: Si
             <BrandLogo priority />
           </Link>
 
-          {showNavigation && (
-            <>
-              <button
-                className="menu-button"
-                type="button"
-                aria-expanded={isOpen}
-                aria-controls="primary-navigation"
-                onClick={() => setIsOpen((open) => !open)}
-              >
-                <span /><span /><span />
-                <span className="sr-only">메뉴 {isOpen ? "닫기" : "열기"}</span>
-              </button>
+          <button
+            className="menu-button"
+            type="button"
+            aria-expanded={isOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            <span /><span /><span />
+            <span className="sr-only">메뉴 {isOpen ? "닫기" : "열기"}</span>
+          </button>
 
-              <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
-                {SITE.navigation.map(item => <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>)}
-              </nav>
-            </>
-          )}
+          <nav className={`primary-nav${isOpen ? " is-open" : ""}`} id="primary-navigation" aria-label="주요 메뉴">
+            {SITE.navigation.map(item => <a key={item.href} href={item.href} onClick={() => setIsOpen(false)}>{item.label}</a>)}
+          </nav>
 
           <div className="header-actions">
-            <Link className="nav-action" href={downloadHref} onClick={() => setIsOpen(false)}>앱 다운로드</Link>
+            <Link className="nav-action" href="/#app" onClick={() => setIsOpen(false)}>앱 다운로드</Link>
           </div>
         </div>
       </div>

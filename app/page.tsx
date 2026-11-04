@@ -1,4 +1,5 @@
 import { AppDownloadLinks } from "@/components/AppDownloadLinks";
+import { CenterSection } from "@/components/CenterSection";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AppScreen } from "@/components/AppPreview";
@@ -16,7 +17,18 @@ export default function Home() {
             <div className="headline-block">
               <h1 id="hero-title">수업도 대타도<br />프리너블에서 구해요</h1>
               <p className="lead hero-lead">예체능 프리랜서 강사 구인구직 플랫폼</p>
-              <AppDownloadLinks />
+              <nav className="path-links" aria-label="이용자별 안내">
+                <a className="path-link" href="#teacher">
+                  <span className="path-who">강사라면</span>
+                  <strong>수업 찾기<span aria-hidden="true"> →</span></strong>
+                  <span className="path-note">공고·대타 지원</span>
+                </a>
+                <a className="path-link path-link-center" href="#center">
+                  <span className="path-who">원장님이라면</span>
+                  <strong>강사 구하기<span aria-hidden="true"> →</span></strong>
+                  <span className="path-note">공고 등록 무료</span>
+                </a>
+              </nav>
             </div>
             <figure className="hero-figure">
               <AppScreen kind="jobs" className="hero-shot" eager />
@@ -30,7 +42,7 @@ export default function Home() {
             <p className="statement-line">지인 연락, 오픈톡, 커뮤니티, 유료 공고 대신<br />센터는 무료로 올리고, 강사는 골라서 지원.</p>
           </div>
         </section>
-        <section className="genres" aria-labelledby="genres-title">
+        <section className="genres" id="teacher" aria-labelledby="genres-title">
           <div className="container genres-grid">
             <h2 id="genres-title">어떤 수업을<br />가르치세요?</h2>
             <ul className="genre-list">
@@ -45,6 +57,7 @@ export default function Home() {
           </div>
         </section>
         <FeatureTour />
+        <CenterSection />
         <section className="app-section" id="app" aria-labelledby="app-title">
           <div className="container app-grid">
             <div className="app-copy">

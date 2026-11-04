@@ -9,10 +9,10 @@ export interface StoreLinks {
   googlePlay: string;
 }
 
-// 원장님용 인스타그램 광고(/center) 설치 버튼. 홈과 같은 스토어 주소에 캠페인 값만 바꿔 광고 성과를 따로 봅니다.
-export const CENTER_AD_STORE_LINKS: StoreLinks = {
-  appStore: `${STORE_PROFILES.appStore}?pt=128918909&ct=center_ad&mt=8`,
-  googlePlay: `${STORE_PROFILES.googlePlay}&utm_source=instagram&utm_medium=cta&utm_campaign=center_ad`,
+// 홈의 원장님 섹션(#center) 설치 버튼. 원장님 쪽 설치를 강사 쪽(website)과 나눠 보도록 캠페인 값만 바꿉니다.
+export const CENTER_STORE_LINKS: StoreLinks = {
+  appStore: `${STORE_PROFILES.appStore}?pt=128918909&ct=website_center&mt=8`,
+  googlePlay: `${STORE_PROFILES.googlePlay}&utm_source=website&utm_medium=cta&utm_campaign=website_center`,
 };
 
 export const SITE = {
@@ -29,6 +29,7 @@ export const SITE = {
     { href: "/#jobs", label: "수업 찾기" },
     { href: "/#substitute", label: "대타 구하기" },
     { href: "/#talent", label: "강사 프로필" },
+    { href: "/#center", label: "원장님이라면" },
   ],
   fields: ["댄스", "발레", "필라테스", "요가", "피트니스"],
   jobCriteria: [
