@@ -4,6 +4,17 @@ export const STORE_PROFILES = {
   googlePlay: "https://play.google.com/store/apps/details?id=com.free119.app",
 };
 
+export interface StoreLinks {
+  appStore: string;
+  googlePlay: string;
+}
+
+// 원장님용 인스타그램 광고(/center) 설치 버튼. 홈과 같은 스토어 주소에 캠페인 값만 바꿔 광고 성과를 따로 봅니다.
+export const CENTER_AD_STORE_LINKS: StoreLinks = {
+  appStore: `${STORE_PROFILES.appStore}?pt=128918909&ct=center_ad&mt=8`,
+  googlePlay: `${STORE_PROFILES.googlePlay}&utm_source=instagram&utm_medium=cta&utm_campaign=center_ad`,
+};
+
 export const SITE = {
   name: "freenable",
   gaMeasurementId: "G-1F0D415CMV",

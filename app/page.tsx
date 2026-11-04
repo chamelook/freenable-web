@@ -1,12 +1,9 @@
-import Link from "next/link";
-
-import { BrandLogo } from "@/components/BrandLogo";
 import { AppDownloadLinks } from "@/components/AppDownloadLinks";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { AppScreen } from "@/components/AppPreview";
 import { FeatureTour } from "@/components/FeatureTour";
 import { GENRES } from "@/content/landing";
-import { SITE } from "@/content/site";
 
 export default function Home() {
   return (
@@ -64,19 +61,5 @@ export default function Home() {
       </main>
       <SiteFooter />
     </div>
-  );
-}
-function SiteFooter() {
-  return (
-    <footer className="site-footer">
-      <div className="container footer-grid">
-        <div className="footer-brand"><BrandLogo /></div>
-        <div className="footer-links">
-          <div><strong>서비스</strong><a href="#jobs">수업 찾기</a><a href="#substitute">대타 구하기</a><a href="#talent">강사 프로필</a></div>
-          <div><strong>안내</strong><Link href="#about">서비스 소개</Link><a href={`mailto:${SITE.email}`}>고객문의</a><Link href="/terms">이용약관</Link><Link href="/privacy">개인정보처리방침</Link></div>
-        </div>
-        <div className="footer-business"><p><strong>프리너블 (freenable)</strong><span>대표 권주빈</span><span>사업자등록번호 779-05-03544</span><span>통신판매업 신고번호 2026-서울성북-0328</span></p><p><span>서울시 성북구 북악산로 844 114-1201</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a><span>010-8979-2047</span><span>개인정보 보호책임자 권주빈</span></p><p className="copyright">© 2026 freenable. All rights reserved.</p></div>
-      </div>
-    </footer>
   );
 }
