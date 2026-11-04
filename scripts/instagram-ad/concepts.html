@@ -6,7 +6,7 @@
 <!-- 원장님용 광고 콘셉트 비교 시안(피드 4:5, 1080x1350).
      1차: ?c=a 상황형, ?c=b 대비형, ?c=c 한 방형
      2차(Meta 광고 라이브러리 레퍼런스 기반): ?c=d1 숨고식 체크리스트, ?c=d2&cat=필라테스 센터 숨고식 업종별, ?c=d3 알바몬식 질문+배지, ?c=d4 숨고식 이미지 공식
-     3차: ?c=d12 체크리스트(D1)에 대상 업종 칩(D2)을 합친 안. &f=story는 스토리·릴스 9:16(1080x1920), 위 270px·아래 670px 가림 영역 밖에 모두 둡니다 -->
+     3차: ?c=d12 체크리스트(D1)에 대상 업종 칩(D2)을 합친 안. d12·d3은 &f=story로 스토리·릴스 9:16(1080x1920), 위 270px·아래 670px 가림 영역 밖에 모두 둡니다 -->
 <style>
 @font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
 @font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
@@ -96,10 +96,15 @@ body.story[data-c="d12"] .cd1 .bar{top:1018px;height:196px}
 body.show-guide .guide{display:block}
 
 /* D3. 알바몬식 질문 + 장점 배지 */
-.cd3 h1{top:196px}
-.cd3 .badges{top:500px;display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.cd3 h1{top:214px}
+.cd3 .badges{top:520px;display:flex;flex-direction:column;align-items:flex-start;gap:24px}
 .cd3 .badge{display:flex;align-items:center;gap:26px;height:124px;padding:0 48px 0 30px;border-radius:999px;background:var(--white);font-size:46px;font-weight:700;letter-spacing:-.04em;box-shadow:0 14px 32px var(--shadow-far)}
-.cd3 .tail{top:1012px;font-size:58px;font-weight:700;letter-spacing:-.045em}
+.cd3 .tail{top:1056px;font-size:58px;font-weight:700;letter-spacing:-.045em}
+/* D3 9:16: 질문, 배지 3개, 마무리 문구를 270~1250px 안에 넣습니다 */
+body.story[data-c="d3"] .cd3 h1{top:380px}
+body.story[data-c="d3"] .cd3 .badges{top:630px;gap:20px}
+body.story[data-c="d3"] .cd3 .badge{height:112px}
+body.story[data-c="d3"] .cd3 .tail{top:1080px}
 .cd3 .tail em{font-style:normal;color:var(--orange)}
 
 /* D4. 숨고식 이미지 공식: 짧은 헤드라인 + 실제 화면 + 하단 버튼 */
