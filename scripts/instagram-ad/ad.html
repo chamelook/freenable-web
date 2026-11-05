@@ -16,10 +16,12 @@
   --ink:#191F28; --sub:#68605A; --muted:#74716E;
   --sand:#F3E9DF; --sand-light:#F8F2EB; --sand-deep:#E8D5C0; --logo:#000; --warm:#966044; --accent:#C48A6A;
   /* 앱 화면 머리 높이, 목록을 미리 내려 둔 거리, 영상에서 목록이 밀려 들어오는 거리, 강조할 첫 카드 위치(608px 화면 기준) */
-  --head:234px; --offset:0px; --shift:187px; --tint-top:234px; --tint-h:187px;
+  /* 앱 화면 390px → 608px(×1.559). 대타구해요: 필터 아래 12 간격 뒤 첫 카드(162~282), 카드 간격 12 */
+  --head:234px; --offset:0px; --shift:206px; --tint-top:253px; --tint-h:187px;
 }
 /* 센터용: 채용정보의 스페셜 공고 칸은 넘기고 일반 공고 첫 카드부터 보여 첫 제목이 가림 영역 위에 오게 합니다 */
-body.v-center{--offset:304px; --shift:180px; --tint-top:538px; --tint-h:180px}
+/* 채용정보: 첫 일반 공고 카드가 356에서 시작합니다. 위의 '일반 공고' 글자가 걸리지 않도록 350부터 보이게 합니다 */
+body.v-center{--offset:312px; --shift:206px; --tint-top:555px; --tint-h:187px}
 /* 센터용 정지 이미지는 첫 공고 카드에 연한 웜톤을 남겨 '내 공고가 뜰 자리'로 시선을 모읍니다 */
 body.v-center .new-tint{opacity:.42}
 *{box-sizing:border-box;word-break:keep-all}
@@ -52,7 +54,8 @@ h1 .hl{color:var(--warm)}
 .screen-head{position:absolute;left:0;right:0;top:0;height:var(--head);overflow:hidden;z-index:2;background:#FAF9F6}
 .screen-list{position:absolute;left:0;right:0;top:var(--head);bottom:0;overflow:hidden}
 .list-track{position:relative;height:1316px;margin-top:calc(-1 * (var(--head) + var(--offset)))}
-.new-tint{position:absolute;left:0;right:0;top:var(--tint-top);height:var(--tint-h);background:var(--sand-deep);mix-blend-mode:multiply;opacity:0}
+/* 둥근 공고 카드(좌우 16, 모서리 16)와 같은 모양으로 강조합니다 */
+.new-tint{position:absolute;left:25px;right:25px;border-radius:25px;top:var(--tint-top);height:var(--tint-h);background:var(--sand-deep);mix-blend-mode:multiply;opacity:0}
 
 .disclaimer{position:absolute;right:80px;top:808px;margin:0;font-size:20px;color:var(--muted)}
 
