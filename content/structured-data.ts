@@ -29,7 +29,7 @@ export const STRUCTURED_DATA = {
       name: "프리너블",
       operatingSystem: "iOS, Android",
       applicationCategory: "BusinessApplication",
-      description: "댄스·발레·필라테스·요가·피트니스 분야의 예체능 프리랜서 강사 구인구직 플랫폼",
+      description: "댄스·발레·필라테스·요가·피트니스 분야의 예체능 강사 구인구직 플랫폼",
       installUrl: STORE_PROFILES.googlePlay,
       offers: { "@type": "Offer", price: "0", priceCurrency: "KRW" },
       publisher: { "@id": `${BASE_URL}/#org` },

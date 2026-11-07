@@ -18,7 +18,7 @@ export default function Home() {
           <div className="container headline-grid">
             <div className="headline-block">
               <h1 id="hero-title">수업도 대타도<br />프리너블에서 구해요</h1>
-              <p className="lead hero-lead">예체능 프리랜서 강사 구인구직 플랫폼</p>
+              <p className="lead hero-lead">예체능 강사 구인구직 플랫폼</p>
               <p className="member-count"><span aria-hidden="true" className="member-count-dot" /><span><strong><FreelancerCount /></strong>의 강사와 함께하고 있어요</span></p>
               <nav className="path-links" aria-label="이용자별 안내">
                 <a className="path-link" href="#teacher">
