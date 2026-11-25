@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ad.html·owner.html → scripts/instagram-ad/out/*.png (강사용·센터용·원장님용: 1080x1920 릴스·스토리와 안전 영역 표시본, 1080x1350 피드)
+# ad.html·owner.html·postings.html → scripts/instagram-ad/out/*.png (강사용·센터용·원장님용: 1080x1920 릴스·스토리와 안전 영역 표시본, 1080x1350 피드)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
@@ -34,3 +34,6 @@ render center-1080x1350 "?v=center&f=feed" 1350
 render owner-1080x1350 "" 1350 owner.html
 render owner-1080x1920 "?f=story" 1920 owner.html
 render owner-1080x1920-guide "?f=story&guide=1" 1920 owner.html
+render postings-1080x1350 "" 1350 postings.html
+render postings-1080x1920 "?f=story" 1920 postings.html
+render postings-1080x1920-guide "?f=story&guide=1" 1920 postings.html

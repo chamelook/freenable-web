@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>freenable 대타 공고 홍보</title>
+<!-- 실제 올라온 대타 공고를 알리는 홍보 이미지. 넓은 여백, 절제된 글자 크기, 흰 패널 하나에 가는 선으로 나눈 목록.
+     강조색은 웜브라운 하나만 씁니다. 기본은 피드 4:5(1080x1350), ?f=story는 9:16(1080x1920, 270~1250px 안에 배치).
+     데이터는 postings-data.js -->
+<style>
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Regular.woff2) format('woff2');font-weight:400}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2');font-weight:500}
+@font-face{font-family:Spoqa;src:url(../../public/fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2');font-weight:700}
+:root{
+  --ink:#191F28; --sub:#6F6863; --muted:#9A928B; --warm:#966044; --white:#FFFFFF; --sand:#F3E9DF; --sand-light:#F8F2EB; --hair:#191F2814;
+  --h:1350px; --top-y:96px; --head-y:236px; --panel-y:500px; --row-h:178px; --foot-y:1126px;
+  --bg:radial-gradient(ellipse 760px 700px at 720px 980px,var(--sand-light) 0%,var(--sand) 70%);
+}
+body.story{--h:1920px; --top-y:296px; --head-y:392px; --panel-y:648px; --row-h:146px; --foot-y:1128px;
+  --bg:radial-gradient(ellipse 760px 900px at 720px 1300px,var(--sand-light) 0%,var(--sand) 70%)}
+*{box-sizing:border-box;word-break:keep-all}
+html,body{margin:0;padding:0}
+body{position:relative;overflow:hidden;width:1080px;height:var(--h);font-family:Spoqa,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;
+  font-feature-settings:'tnum';background:var(--bg)}
+.wrap{position:absolute;left:96px;right:96px}
+
+.top{top:var(--top-y);display:flex;align-items:baseline;justify-content:space-between}
+.logo{font-size:40px;font-weight:500;line-height:1;color:#000}
+/* 상단 줄은 다른 광고(ad.html·owner.html)와 같은 워드마크 + 스토어 표기 */
+.store{font-size:24px;font-weight:500;color:#74716E;letter-spacing:-.02em}
+
+.head{top:var(--head-y);margin:0}
+.over{display:block;margin-bottom:22px;font-size:24px;font-weight:700;color:var(--warm);letter-spacing:.02em}
+.head h1{margin:0;font-size:68px;line-height:1.24;font-weight:700;letter-spacing:-.045em}
+.head h1 span{display:block}
+.head h1 .soft{font-weight:400;color:var(--sub)}
+body.story .head h1{font-size:62px}
+
+/* 흰 패널 하나 + 가는 구분선: 카드 여러 장보다 조용하게 */
+.panel{top:var(--panel-y);margin:0;padding:0 48px;list-style:none;border-radius:28px;background:var(--white);box-shadow:0 1px 0 #603C200A,0 20px 50px #603C2010}
+.panel li{height:var(--row-h);display:flex;align-items:center;justify-content:space-between;gap:32px}
+.panel li+li{border-top:2px solid var(--hair)}
+.l{min-width:0}
+.cap{font-size:23px;font-weight:500;color:var(--muted);letter-spacing:-.01em}
+.cap b{font-weight:700;color:var(--warm)}
+.ttl{margin-top:10px;font-size:34px;font-weight:700;letter-spacing:-.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.r{flex:none;text-align:right}
+.date{font-size:34px;font-weight:700;letter-spacing:-.03em}
+.date small{margin-left:6px;font-size:23px;font-weight:500;color:var(--muted)}
+.pay{margin-top:10px;font-size:24px;font-weight:500;color:var(--sub);letter-spacing:-.02em}
+body.story .ttl,body.story .date{font-size:31px}
+
+/* 하단은 행동 문구 한 줄만 둡니다 */
+.foot{top:var(--foot-y);padding-top:34px;border-top:2px solid var(--hair)}
+.cta{font-size:30px;font-weight:500;letter-spacing:-.03em}
+.cta b{font-weight:700}
+
+.guide{display:none;position:absolute;left:0;right:0;background:#ff000033;z-index:9}
+body.show-guide .guide{display:block}
+</style>
+</head>
+<body>
+<div class="wrap top"><span class="logo">freenable</span><span class="store">App Store · Google Play</span></div>
+<div class="wrap head"><span class="over">NOW OPEN</span><h1><span class="soft">새로 올라온</span><span class="n"></span></h1></div>
+<ul class="wrap panel"></ul>
+<div class="wrap foot"><span class="cta">프리너블 앱 <b>대타구해요</b>에서 지금 지원하세요</span></div>
+<div class="guide" style="top:0;height:270px"></div>
+<div class="guide" style="bottom:0;height:670px"></div>
+<script src="postings-data.js"></script>
+<script>
+const dot=s=>s.replace(/\//g,'.').replace(/\s*~\s*/g,' – ');
+document.querySelector('.head .n').textContent=`대타 공고 ${POSTS.length}건`;
+document.querySelector('.panel').innerHTML=POSTS.map(p=>`<li>
+  <div class="l"><div class="cap"><b>${esc(p.genre)}</b> · ${esc(p.where)} · ${esc(p.time)}</div><div class="ttl">${esc(p.title)}</div></div>
+  <div class="r"><div class="date">${esc(dot(p.date))}${p.dow?`<small>${esc(p.dow)}</small>`:''}</div><div class="pay">${esc(p.pay)}</div></div></li>`).join('');
+const Q=new URLSearchParams(location.search);
+if(Q.get('f')==='story')document.body.classList.add('story');
+if(Q.has('guide'))document.body.classList.add('show-guide');
+</script>
+</body>
+</html>
